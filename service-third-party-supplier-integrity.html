@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Third-Party &amp; Supplier Integrity Intelligence | Mbhidiya Intelligence</title>
+  <meta name="description" content="Understand who your suppliers, agents, consultants, distributors and external partners are before they become part of your commercial ecosystem.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-navy-depth: #0C1B3A;
+      --color-navy-medium: #1A3158;
+      --color-intelligence-blue: #1E3A6E;
+      --color-signal-red: #C0392B;
+      --color-integrity-green: #1D7A47;
+      --color-insight-gold: #D4A017;
+      --color-gold-hover: #E8B830;
+      --color-white: #FFFFFF;
+      --color-off-white: #F7F8FA;
+      --color-light-gray: #E8ECF1;
+      --color-mid-gray: #8896A7;
+      --color-dark-gray: #3D4F63;
+      --color-near-black: #0A0F1A;
+      --color-text-primary: var(--color-dark-gray);
+      --color-text-heading: var(--color-near-black);
+      --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --max-width: 1200px;
+      --header-height: 80px;
+      --transition-fast: 200ms ease-out;
+      --transition-medium: 300ms ease;
+      --shadow-1: 0 1px 3px rgba(12,27,58,0.08);
+      --shadow-2: 0 4px 12px rgba(12,27,58,0.12);
+      --shadow-3: 0 8px 24px rgba(12,27,58,0.16);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px; line-height: 1.7;
+      color: var(--color-text-primary);
+      background: var(--color-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    .overline {
+      font-family: var(--font-body); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-insight-gold);
+    }
+    .section-title {
+      font-family: var(--font-heading); font-size: 36px; font-weight: 400;
+      line-height: 1.2; letter-spacing: -0.01em;
+      color: var(--color-text-heading); margin-top: 12px;
+    }
+    .section-title--light { color: var(--color-white); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      letter-spacing: 0.03em; border-radius: 6px; cursor: pointer; border: none;
+      text-decoration: none; white-space: nowrap;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+    .btn:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 2px; }
+    .btn:active { transform: translateY(1px); }
+    .btn--gold { background: var(--color-insight-gold); color: var(--color-navy-depth); padding: 12px 28px; }
+    .btn--gold:hover { background: var(--color-gold-hover); }
+    .btn--gold:focus-visible { outline-color: var(--color-navy-depth); }
+    .btn--outline { background: transparent; color: var(--color-navy-depth); padding: 12px 28px; border: 1.5px solid var(--color-navy-depth); }
+    .btn--outline:hover { background: var(--color-navy-depth); color: var(--color-white); }
+    .btn--large { padding: 18px 40px; font-size: 17px; }
+
+    /* HEADER */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--header-height); z-index: 1000;
+      background: var(--color-navy-depth); box-shadow: var(--shadow-1);
+    }
+    .header__inner {
+      max-width: 1360px; margin: 0 auto; height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .logo__symbol { height: 44px; width: auto; }
+    .logo__text { display: flex; flex-direction: column; line-height: 1; }
+    .logo__name { font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-white); letter-spacing: -0.01em; }
+    .logo__tagline { font-family: var(--font-body); font-size: 9.5px; font-weight: 500; color: var(--color-white); opacity: 0.7; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 3px; }
+
+    .nav-desktop { display: flex; align-items: center; gap: 32px; }
+    .nav-desktop__link {
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      color: rgba(255,255,255,0.8); text-decoration: none; position: relative;
+      padding: 8px 0; transition: color var(--transition-fast);
+    }
+    .nav-desktop__link:hover { color: var(--color-white); }
+    .nav-desktop__link--active { color: var(--color-white); }
+    .nav-desktop__link--active::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--color-insight-gold); border-radius: 1px;
+    }
+    .nav-desktop__link:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 4px; border-radius: 2px; }
+
+    .nav-desktop__dropdown { position: relative; }
+    .nav-desktop__dropdown-trigger {
+      display: flex; align-items: center; gap: 5px; cursor: pointer;
+      background: none; border: none; font-family: var(--font-body);
+      font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8);
+      padding: 8px 0; transition: color var(--transition-fast);
+    }
+    .nav-desktop__dropdown-trigger:hover { color: var(--color-white); }
+    .nav-desktop__dropdown-trigger--active { color: var(--color-white); }
+    .nav-desktop__dropdown-trigger--active::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: calc(100% - 60px);
+      height: 2px; background: var(--color-insight-gold); border-radius: 1px;
+    }
+    .nav-desktop__dropdown-trigger:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 4px; border-radius: 2px; }
+    .nav-desktop__chevron { width: 12px; height: 12px; transition: transform var(--transition-fast); }
+    .nav-desktop__dropdown-trigger:hover .nav-desktop__chevron,
+    .nav-desktop__dropdown-trigger[aria-expanded="true"] .nav-desktop__chevron { transform: rotate(180deg); }
+
+    /* Mega Menu */
+    .mega-menu {
+      position: absolute; top: var(--header-height); left: 0; right: 0;
+      background: var(--color-white); box-shadow: var(--shadow-3);
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+    }
+    .mega-menu--open { opacity: 1; visibility: visible; transform: translateY(0); }
+    .mega-menu__inner { max-width: var(--max-width); margin: 0 auto; padding: 40px 80px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+    .mega-menu__col-title { font-size: 11px; font-weight: 600; color: var(--color-mid-gray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+    .mega-menu__links { display: flex; flex-direction: column; gap: 6px; }
+    .mega-menu__link { font-size: 15px; font-weight: 500; color: var(--color-dark-gray); padding: 8px 10px; margin: 0 -10px; border-radius: 6px; transition: background var(--transition-fast), color var(--transition-fast); display: flex; align-items: center; gap: 8px; }
+    .mega-menu__link:hover { background: var(--color-off-white); color: var(--color-navy-depth); }
+    .mega-menu__badge { font-size: 10px; font-weight: 600; color: var(--color-navy-depth); background: linear-gradient(90deg, #D4A017, #E8B830); padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .mega-menu__cta-box { background: var(--color-off-white); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .mega-menu__cta-title { font-family: var(--font-heading); font-size: 20px; color: var(--color-near-black); }
+    .mega-menu__cta-text { font-size: 14px; color: var(--color-dark-gray); line-height: 1.6; }
+    .mega-menu__cta-link { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; color: var(--color-intelligence-blue); transition: color var(--transition-fast); }
+    .mega-menu__cta-link:hover { color: var(--color-navy-depth); }
+    .mega-menu__cta-link svg { transition: transform var(--transition-fast); }
+    .mega-menu__cta-link:hover svg { transform: translateX(4px); }
+
+    /* Mobile Toggle */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 2001; }
+    .nav-toggle__bar { display: block; width: 24px; height: 2px; background: var(--color-white); border-radius: 2px; transition: transform var(--transition-fast), opacity var(--transition-fast); }
+    .nav-toggle__bar + .nav-toggle__bar { margin-top: 6px; }
+    .nav-toggle--open .nav-toggle__bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle--open .nav-toggle__bar:nth-child(2) { opacity: 0; }
+    .nav-toggle--open .nav-toggle__bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile Nav */
+    .nav-mobile { display: none; position: fixed; inset: 0; background: var(--color-navy-depth); z-index: 2000; flex-direction: column; padding: 100px 32px 40px; overflow-y: auto; transform: translateX(100%); transition: transform 300ms ease; }
+    .nav-mobile--open { transform: translateX(0); }
+    .nav-mobile__link { font-size: 24px; font-weight: 500; color: var(--color-white); padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: block; transition: color var(--transition-fast); }
+    .nav-mobile__link:hover { color: var(--color-insight-gold); }
+    .nav-mobile__link--active { color: var(--color-insight-gold); }
+    .nav-mobile__accordion { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-mobile__accordion-trigger { background: none; border: none; font-family: var(--font-body); font-size: 24px; font-weight: 500; color: var(--color-white); padding: 16px 0; width: 100%; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+    .nav-mobile__accordion-trigger--active { color: var(--color-insight-gold); }
+    .nav-mobile__accordion-trigger svg { transition: transform var(--transition-fast); }
+    .nav-mobile__accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .nav-mobile__accordion-panel { max-height: 0; overflow: hidden; transition: max-height 250ms ease; }
+    .nav-mobile__accordion-panel--open { max-height: 600px; }
+    .nav-mobile__sublink { display: block; font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.7); padding: 10px 0 10px 16px; transition: color var(--transition-fast); }
+    .nav-mobile__sublink:hover { color: var(--color-white); }
+    .nav-mobile__cta { margin-top: auto; padding-top: 32px; }
+    .nav-mobile__cta .btn { display: block; width: 100%; text-align: center; padding: 18px 32px; font-size: 17px; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-family: var(--font-body); font-size: 13px; display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); }
+    .breadcrumb a:hover { color: var(--color-white); }
+    .breadcrumb__sep { color: rgba(255,255,255,0.3); }
+    .breadcrumb__current { color: rgba(255,255,255,0.85); }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: linear-gradient(135deg, rgba(12,27,58,0.92) 0%, rgba(26,49,88,0.85) 100%),
+                  linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%);
+      padding: 160px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(30,58,110,0.3) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(30,58,110,0.2) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .page-hero__inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero__title {
+      font-family: var(--font-heading); font-size: 44px; font-weight: 400;
+      color: var(--color-white); line-height: 1.15; letter-spacing: -0.01em;
+      margin-top: 16px; max-width: 700px;
+    }
+    .page-hero__tagline {
+      font-family: var(--font-heading); font-size: 22px; font-weight: 400;
+      font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.5;
+      margin-top: 20px; max-width: 650px;
+    }
+
+    /* SERVICE DETAIL CONTENT */
+    .service-content {
+      padding: 96px 80px;
+    }
+    .service-content__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .service-content__intro {
+      max-width: 760px;
+      margin-bottom: 64px;
+    }
+    .service-content__intro p {
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--color-text-primary);
+    }
+    .service-content__intro p + p {
+      margin-top: 16px;
+    }
+    .service-content__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .service-content__block {}
+    .service-content__block-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--color-text-heading);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+    .service-content__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .service-content__tag {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-dark-gray);
+      background: var(--color-off-white);
+      border: 1px solid var(--color-light-gray);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .service-content__tag:hover {
+      border-color: rgba(30,58,110,0.3);
+      background: var(--color-white);
+    }
+    .service-back {
+      margin-top: 48px;
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+      padding: 96px 80px;
+      background: linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(212,160,23,0.06) 0%, transparent 60%); pointer-events: none; }
+    .cta-final__inner { position: relative; z-index: 1; }
+    .cta-final__title { font-family: var(--font-heading); font-size: 44px; font-weight: 400; color: var(--color-white); line-height: 1.15; letter-spacing: -0.01em; max-width: 600px; margin: 0 auto; }
+    .cta-final__text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 500px; margin: 20px auto 0; }
+    .cta-final__btn { margin-top: 40px; }
+
+    /* FOOTER */
+    .footer { background: var(--color-near-black); padding: 80px 80px 32px; }
+    .footer__inner { max-width: var(--max-width); margin: 0 auto; }
+    .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 48px; }
+    .footer__brand { display: flex; flex-direction: column; gap: 16px; }
+    .footer__logo { display: flex; align-items: center; gap: 10px; }
+    .footer__logo-symbol { height: 36px; width: auto; }
+    .footer__logo-name { font-family: var(--font-heading); font-size: 20px; color: var(--color-white); }
+    .footer__values { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+    .footer__values strong { color: var(--color-white); font-weight: 600; }
+    .footer__tagline { font-family: var(--font-heading); font-size: 15px; font-style: italic; color: rgba(255,255,255,0.5); margin-top: 8px; }
+    .footer__col-title { font-size: 14px; font-weight: 600; color: var(--color-white); margin-bottom: 20px; }
+    .footer__links { display: flex; flex-direction: column; gap: 10px; }
+    .footer__link { font-size: 14px; color: rgba(255,255,255,0.7); transition: color var(--transition-fast); }
+    .footer__link:hover { color: var(--color-white); }
+    .footer__divider { border: none; height: 1px; background: rgba(255,255,255,0.1); margin: 32px 0; }
+    .footer__bottom { display: flex; align-items: center; justify-content: space-between; }
+    .footer__copyright { font-size: 13px; color: var(--color-mid-gray); }
+    .footer__legal { display: flex; gap: 24px; }
+    .footer__legal a { font-size: 13px; color: var(--color-mid-gray); transition: color var(--transition-fast); }
+    .footer__legal a:hover { color: var(--color-white); }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
+    .reveal--visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE - TABLET */
+    @media (max-width: 1024px) {
+      .header__inner { padding: 0 48px; }
+      .page-hero, .service-content, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
+      .mega-menu__inner { padding: 32px 48px; gap: 24px; }
+      .page-hero__title { font-size: 38px; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    /* RESPONSIVE - MOBILE */
+    @media (max-width: 900px) {
+      .nav-desktop { display: none; }
+      .nav-toggle { display: flex; flex-direction: column; }
+      .nav-mobile { display: flex; }
+      .header__inner { padding: 0 20px; }
+      .page-hero, .service-content, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
+      .page-hero { padding-top: 120px; padding-bottom: 60px; }
+      .page-hero__title { font-size: 32px; }
+      .page-hero__tagline { font-size: 19px; }
+      .section-title { font-size: 26px; }
+      .service-content { padding-top: 64px; padding-bottom: 64px; }
+      .service-content__grid { grid-template-columns: 1fr; gap: 40px; }
+      .service-content__block-title { font-size: 22px; }
+      .cta-final__title { font-size: 32px; }
+      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .footer { padding: 48px 20px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .logo__name { font-size: 18px; }
+      .logo__tagline { font-size: 8px; }
+      .logo__symbol { height: 36px; }
+      .page-hero__title { font-size: 28px; }
+      .cta-final__title { font-size: 28px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="Mbhidiya Intelligence - Home">
+        <svg class="logo__symbol" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 8 C20 8, 2 35, 10 65" stroke="#C0392B" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M50 22 C28 22, 14 42, 20 62" stroke="#1D7A47" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <path d="M50 36 C36 36, 26 48, 30 60" stroke="#D4A017" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <circle cx="50" cy="68" r="16" stroke="#0C1B3A" stroke-width="3" fill="none"/>
+          <circle cx="50" cy="68" r="6" fill="#0C1B3A"/>
+          <ellipse cx="50" cy="68" rx="24" ry="10" stroke="#0C1B3A" stroke-width="2" fill="none" opacity="0.5"/>
+          <circle cx="74" cy="68" r="2.5" fill="#0C1B3A"/>
+          <circle cx="26" cy="68" r="2.5" fill="#0C1B3A"/>
+        </svg>
+        <div class="logo__text">
+          <span class="logo__name">Mbhidiya</span>
+          <span class="logo__tagline">Intelligence</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <div class="nav-desktop__dropdown">
+          <button class="nav-desktop__dropdown-trigger nav-desktop__dropdown-trigger--active" aria-expanded="false" aria-controls="mega-menu" id="services-trigger">
+            Services
+            <svg class="nav-desktop__chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <a href="about.html" class="nav-desktop__link">About</a>
+        <a href="/canada-africa" class="nav-desktop__link">Canada &amp; Africa</a>
+        <a href="/sectors" class="nav-desktop__link">Sectors</a>
+        <a href="/insights" class="nav-desktop__link">Insights</a>
+        <a href="/contact" class="btn btn--gold">Request a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+
+    <div class="mega-menu" id="mega-menu" role="region" aria-label="Services menu">
+      <div class="mega-menu__inner">
+        <div>
+          <div class="mega-menu__col-title">People Intelligence</div>
+          <ul class="mega-menu__links">
+            <li><a href="services.html#human-risk-intelligence" class="mega-menu__link">Human Risk Intelligence</a></li>
+            <li><a href="services.html#executive-vetting" class="mega-menu__link">Executive Vetting &amp; Leadership</a></li>
+            <li><a href="services.html#reputation-digital-footprint" class="mega-menu__link">Reputation &amp; Digital Footprint</a></li>
+            <li><a href="services.html#network-influence-intelligence" class="mega-menu__link">Network &amp; Influence Intelligence</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="mega-menu__col-title">Corporate Intelligence</div>
+          <ul class="mega-menu__links">
+            <li><a href="services.html#african-cross-border-intelligence" class="mega-menu__link">African Cross-Border <span class="mega-menu__badge">Flagship</span></a></li>
+            <li><a href="services.html#corporate-counterparty-intelligence" class="mega-menu__link">Corporate &amp; Counterparty</a></li>
+            <li><a href="services.html#pre-investment-transaction-intelligence" class="mega-menu__link">Pre-Investment &amp; Transaction</a></li>
+            <li><a href="services.html#third-party-supplier-integrity" class="mega-menu__link">Third-Party &amp; Supplier Integrity</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="mega-menu__col-title">Strategic Intelligence</div>
+          <ul class="mega-menu__links">
+            <li><a href="services.html#market-entry-strategic-intelligence" class="mega-menu__link">Market Entry &amp; Strategic</a></li>
+            <li><a href="services.html#fraud-integrity-intelligence" class="mega-menu__link">Fraud &amp; Integrity</a></li>
+            <li><a href="services.html#continuous-monitoring" class="mega-menu__link">Continuous Monitoring</a></li>
+          </ul>
+          <div class="mega-menu__cta-box">
+            <a href="services.html" class="mega-menu__cta-link" style="margin-bottom: 8px;">
+              View All Services
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="mega-menu__cta-title">Need guidance?</div>
+            <p class="mega-menu__cta-text">Not sure which intelligence service fits your situation?</p>
+            <a href="/contact" class="mega-menu__cta-link">Request a Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <div class="nav-mobile__accordion">
+      <button class="nav-mobile__accordion-trigger nav-mobile__accordion-trigger--active" aria-expanded="false" aria-controls="mobile-services">
+        Services
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8L10 13L15 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-mobile__accordion-panel" id="mobile-services">
+        <a href="services.html#human-risk-intelligence" class="nav-mobile__sublink">Human Risk Intelligence</a>
+        <a href="services.html#african-cross-border-intelligence" class="nav-mobile__sublink">African Cross-Border Intelligence</a>
+        <a href="services.html#corporate-counterparty-intelligence" class="nav-mobile__sublink">Corporate &amp; Counterparty</a>
+        <a href="services.html#executive-vetting" class="nav-mobile__sublink">Executive Vetting</a>
+        <a href="services.html#pre-investment-transaction-intelligence" class="nav-mobile__sublink">Pre-Investment &amp; Transaction</a>
+        <a href="services.html#reputation-digital-footprint" class="nav-mobile__sublink">Reputation &amp; Digital Footprint</a>
+        <a href="services.html#network-influence-intelligence" class="nav-mobile__sublink">Network &amp; Influence</a>
+        <a href="services.html#market-entry-strategic-intelligence" class="nav-mobile__sublink">Market Entry &amp; Strategic</a>
+        <a href="services.html#third-party-supplier-integrity" class="nav-mobile__sublink">Third-Party &amp; Supplier</a>
+        <a href="services.html#fraud-integrity-intelligence" class="nav-mobile__sublink">Fraud &amp; Integrity</a>
+        <a href="services.html#continuous-monitoring" class="nav-mobile__sublink">Continuous Monitoring</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-mobile__link">About</a>
+    <a href="/canada-africa" class="nav-mobile__link">Canada &amp; Africa</a>
+    <a href="/sectors" class="nav-mobile__link">Sectors</a>
+    <a href="/insights" class="nav-mobile__link">Insights</a>
+    <div class="nav-mobile__cta"><a href="/contact" class="btn btn--gold">Request a Consultation</a></div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="page-hero__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb__sep">/</span>
+          <a href="services.html">Services</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">Third-Party &amp; Supplier Integrity</span>
+        </nav>
+        <span class="overline">Service 09</span>
+        <h1 class="page-hero__title">Third-Party &amp; Supplier Integrity Intelligence</h1>
+        <p class="page-hero__tagline">Your Risk Can Come Through Someone Else.</p>
+      </div>
+    </section>
+
+    <section class="service-content">
+      <div class="service-content__inner">
+        <div class="service-content__intro reveal">
+          <p>Organisations increasingly depend on suppliers, consultants, agents, distributors and external partners.</p>
+          <p>We help clients understand who those third parties are before they become part of the organisation's commercial ecosystem.</p>
+        </div>
+
+        <div class="service-content__grid">
+          <div class="service-content__block reveal">
+            <h2 class="service-content__block-title">We Support Assessments Involving</h2>
+            <div class="service-content__tags">
+              <span class="service-content__tag">Suppliers</span>
+              <span class="service-content__tag">Vendors</span>
+              <span class="service-content__tag">Agents</span>
+              <span class="service-content__tag">Consultants</span>
+              <span class="service-content__tag">Distributors</span>
+              <span class="service-content__tag">Contractors</span>
+              <span class="service-content__tag">Intermediaries</span>
+              <span class="service-content__tag">Joint-venture partners</span>
+            </div>
+          </div>
+
+          <div class="service-content__block reveal">
+            <h2 class="service-content__block-title">Identifying Relevant Concerns</h2>
+            <div class="service-content__tags">
+              <span class="service-content__tag">Ownership</span>
+              <span class="service-content__tag">Reputation</span>
+              <span class="service-content__tag">Integrity</span>
+              <span class="service-content__tag">Corporate relationships</span>
+              <span class="service-content__tag">Conflicts of interest</span>
+              <span class="service-content__tag">Political exposure</span>
+              <span class="service-content__tag">Adverse information</span>
+              <span class="service-content__tag">Other relevant risk indicators</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-back">
+          <a href="services.html" class="btn btn--outline">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <div class="cta-final__inner reveal">
+        <h2 class="cta-final__title">Discuss Your Intelligence Requirements</h2>
+        <p class="cta-final__text">Every intelligence requirement is different. Let us help you define the questions that need to be answered.</p>
+        <div class="cta-final__btn">
+          <a href="/contact" class="btn btn--gold btn--large">Request a Confidential Consultation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg class="footer__logo-symbol" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M50 8 C20 8, 2 35, 10 65" stroke="#C0392B" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M50 22 C28 22, 14 42, 20 62" stroke="#1D7A47" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M50 36 C36 36, 26 48, 30 60" stroke="#D4A017" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <circle cx="50" cy="68" r="16" stroke="white" stroke-width="3" fill="none"/>
+              <circle cx="50" cy="68" r="6" fill="white"/>
+              <ellipse cx="50" cy="68" rx="24" ry="10" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
+              <circle cx="74" cy="68" r="2.5" fill="white"/>
+              <circle cx="26" cy="68" r="2.5" fill="white"/>
+            </svg>
+            <span class="footer__logo-name">Mbhidiya</span>
+          </div>
+          <p class="footer__values"><strong>Discretion.</strong> <strong>Loyalty.</strong> <strong>Precision.</strong></p>
+          <p class="footer__tagline">Where Intelligence Meets Action.</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Services</div>
+          <div class="footer__links">
+            <a href="services.html#human-risk-intelligence" class="footer__link">Human Risk Intelligence</a>
+            <a href="services.html#corporate-counterparty-intelligence" class="footer__link">Corporate &amp; Counterparty</a>
+            <a href="services.html#african-cross-border-intelligence" class="footer__link">Cross-Border Intelligence</a>
+            <a href="services.html#pre-investment-transaction-intelligence" class="footer__link">Transaction Intelligence</a>
+            <a href="services.html#executive-vetting" class="footer__link">Executive Vetting</a>
+            <a href="services.html#reputation-digital-footprint" class="footer__link">Reputation &amp; Digital Footprint</a>
+            <a href="services.html#network-influence-intelligence" class="footer__link">Network &amp; Influence</a>
+            <a href="services.html#market-entry-strategic-intelligence" class="footer__link">Market Entry &amp; Strategic</a>
+            <a href="services.html#third-party-supplier-integrity" class="footer__link">Third-Party &amp; Supplier</a>
+            <a href="services.html#fraud-integrity-intelligence" class="footer__link">Fraud &amp; Integrity</a>
+            <a href="services.html#continuous-monitoring" class="footer__link">Continuous Monitoring</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Company</div>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About Us</a>
+            <a href="/process" class="footer__link">Our Process</a>
+            <a href="/sectors" class="footer__link">Sectors</a>
+            <a href="/why-mbhidiya" class="footer__link">Why Mbhidiya</a>
+            <a href="/insights" class="footer__link">Insights</a>
+            <a href="/canada-africa" class="footer__link">Canada &amp; Africa</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <div class="footer__links">
+            <a href="mailto:contact@mbhidiya.com" class="footer__link">Secure Email</a>
+            <a href="/contact" class="footer__link">Contact Form</a>
+            <a href="#" class="footer__link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Mbhidiya Intelligence. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/legal">Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var servicesTrigger = document.getElementById('services-trigger');
+    var megaMenu = document.getElementById('mega-menu');
+    servicesTrigger.addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      megaMenu.classList.toggle('mega-menu--open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!megaMenu.contains(e.target) && !servicesTrigger.contains(e.target)) {
+        servicesTrigger.setAttribute('aria-expanded', 'false');
+        megaMenu.classList.remove('mega-menu--open');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        servicesTrigger.setAttribute('aria-expanded', 'false');
+        megaMenu.classList.remove('mega-menu--open');
+        closeMobileNav();
+      }
+    });
+    var navToggle = document.getElementById('nav-toggle');
+    var navMobile = document.getElementById('nav-mobile');
+    function openMobileNav() {
+      navToggle.classList.add('nav-toggle--open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close menu');
+      navMobile.classList.add('nav-mobile--open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileNav() {
+      navToggle.classList.remove('nav-toggle--open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+      navMobile.classList.remove('nav-mobile--open');
+      document.body.style.overflow = '';
+    }
+    navToggle.addEventListener('click', function () {
+      if (this.getAttribute('aria-expanded') === 'true') closeMobileNav();
+      else openMobileNav();
+    });
+    megaMenu.querySelectorAll('.mega-menu__link, .mega-menu__cta-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        servicesTrigger.setAttribute('aria-expanded', 'false');
+        megaMenu.classList.remove('mega-menu--open');
+      });
+    });
+    navMobile.querySelectorAll('.nav-mobile__sublink, .nav-mobile__link').forEach(function (link) {
+      link.addEventListener('click', function () { closeMobileNav(); });
+    });
+    var accordionTrigger = document.querySelector('.nav-mobile__accordion-trigger');
+    var accordionPanel = document.getElementById('mobile-services');
+    accordionTrigger.addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      accordionPanel.classList.toggle('nav-mobile__accordion-panel--open');
+    });
+    var revealElements = document.querySelectorAll('.reveal');
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealElements.forEach(function (el) { revealObserver.observe(el); });
+  </script>
+
+</body>
+</html>

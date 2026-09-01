@@ -1,0 +1,2863 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mbhidiya Intelligence | Cross-Border Intelligence for High-Stakes
+      Decisions
+    </title>
+    <meta
+      name="description"
+      content="Cross-border intelligence, due diligence and investigative services for organisations making critical decisions about people, companies and opportunities across Canada and Africa."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ================================================================
+       CSS VARIABLES (from 02-charte-graphique & 05-palette-couleurs)
+       ================================================================ */
+      :root {
+        /* Primaires */
+        --color-navy-depth: #0c1b3a;
+        --color-navy-medium: #1a3158;
+        --color-intelligence-blue: #1e3a6e;
+
+        /* Accents panafricains */
+        --color-signal-red: #c0392b;
+        --color-integrity-green: #1d7a47;
+        --color-insight-gold: #d4a017;
+        --color-gold-hover: #e8b830;
+
+        /* Neutres */
+        --color-white: #ffffff;
+        --color-off-white: #f7f8fa;
+        --color-light-gray: #e8ecf1;
+        --color-mid-gray: #8896a7;
+        --color-dark-gray: #3d4f63;
+        --color-near-black: #0a0f1a;
+
+        /* Semantiques */
+        --color-text-primary: var(--color-dark-gray);
+        --color-text-heading: var(--color-near-black);
+        --color-text-on-dark: var(--color-white);
+        --color-bg-primary: var(--color-white);
+        --color-bg-secondary: var(--color-off-white);
+        --color-bg-dark: var(--color-navy-depth);
+
+        /* Typography */
+        --font-heading: "DM Serif Display", Georgia, "Times New Roman", serif;
+        --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+        /* Spacing (base-8) */
+        --space-xs: 4px;
+        --space-sm: 8px;
+        --space-md: 16px;
+        --space-lg: 24px;
+        --space-xl: 32px;
+        --space-2xl: 48px;
+        --space-3xl: 64px;
+        --space-4xl: 96px;
+        --space-5xl: 128px;
+
+        /* Layout */
+        --max-width: 1200px;
+        --header-height: 80px;
+
+        /* Transitions */
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --transition-fast: 200ms ease-out;
+        --transition-medium: 300ms ease;
+
+        /* Shadows */
+        --shadow-1: 0 1px 3px rgba(12, 27, 58, 0.08);
+        --shadow-2: 0 4px 12px rgba(12, 27, 58, 0.12);
+        --shadow-3: 0 8px 24px rgba(12, 27, 58, 0.16);
+      }
+
+      /* ================================================================
+       RESET
+       ================================================================ */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--color-text-primary);
+        background: var(--color-bg-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul,
+      ol {
+        list-style: none;
+      }
+
+      /* ================================================================
+       UTILITY
+       ================================================================ */
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 80px;
+      }
+
+      .overline {
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-insight-gold);
+      }
+
+      .section-title {
+        font-family: var(--font-heading);
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        color: var(--color-text-heading);
+        margin-top: 12px;
+      }
+
+      .section-title--light {
+        color: var(--color-white);
+      }
+
+      .section-subtitle {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--color-text-primary);
+        max-width: 700px;
+        margin-top: 20px;
+      }
+
+      .section-subtitle--light {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ================================================================
+       BUTTONS (from 06-composants-ui)
+       ================================================================ */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        border-radius: 6px;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+        transition:
+          background var(--transition-fast),
+          color var(--transition-fast),
+          transform var(--transition-fast),
+          border-color var(--transition-fast);
+        white-space: nowrap;
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--color-insight-gold);
+        outline-offset: 2px;
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn--primary {
+        background: var(--color-navy-depth);
+        color: var(--color-white);
+        padding: 12px 28px;
+      }
+
+      .btn--primary:hover {
+        background: var(--color-navy-medium);
+      }
+
+      .btn--gold {
+        background: var(--color-insight-gold);
+        color: var(--color-navy-depth);
+        padding: 12px 28px;
+      }
+
+      .btn--gold:hover {
+        background: var(--color-gold-hover);
+      }
+
+      .btn--gold:focus-visible {
+        outline-color: var(--color-navy-depth);
+      }
+
+      .btn--outline-white {
+        background: transparent;
+        color: var(--color-white);
+        padding: 12px 28px;
+        border: 1.5px solid var(--color-white);
+      }
+
+      .btn--outline-white:hover {
+        background: var(--color-white);
+        color: var(--color-navy-depth);
+      }
+
+      .btn--outline {
+        background: transparent;
+        color: var(--color-navy-depth);
+        padding: 12px 28px;
+        border: 1.5px solid var(--color-navy-depth);
+      }
+
+      .btn--outline:hover {
+        background: var(--color-navy-depth);
+        color: var(--color-white);
+      }
+
+      .btn--large {
+        padding: 18px 40px;
+        font-size: 17px;
+      }
+
+      .btn--text {
+        background: transparent;
+        color: var(--color-intelligence-blue);
+        padding: 0;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .btn--text:hover {
+        color: var(--color-navy-depth);
+      }
+
+      .btn--text svg {
+        transition: transform var(--transition-fast);
+      }
+
+      .btn--text:hover svg {
+        transform: translateX(4px);
+      }
+
+      /* ================================================================
+       HEADER (from 06-composants-ui section 4)
+       ================================================================ */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        z-index: 1000;
+        transition:
+          background var(--transition-medium),
+          box-shadow var(--transition-medium);
+      }
+
+      .header--transparent {
+        background: transparent;
+      }
+
+      .header--solid {
+        background: var(--color-navy-depth);
+        box-shadow: var(--shadow-1);
+      }
+
+      .header__inner {
+        max-width: 1360px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 80px;
+      }
+
+      /* Logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .logo__symbol {
+        height: 44px;
+        width: auto;
+      }
+
+      .logo__text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+
+      .logo__name {
+        font-family: var(--font-heading);
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--color-white);
+        letter-spacing: -0.01em;
+      }
+
+      .logo__tagline {
+        font-family: var(--font-body);
+        font-size: 9.5px;
+        font-weight: 500;
+        color: var(--color-white);
+        opacity: 0.7;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+
+      /* Desktop Nav */
+      .nav-desktop {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .nav-desktop__link {
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        position: relative;
+        padding: 8px 0;
+        transition: color var(--transition-fast);
+      }
+
+      .nav-desktop__link:hover {
+        color: var(--color-white);
+      }
+
+      .nav-desktop__link--active {
+        color: var(--color-white);
+      }
+
+      .nav-desktop__link--active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--color-insight-gold);
+        border-radius: 1px;
+      }
+
+      .nav-desktop__link:focus-visible {
+        outline: 2px solid var(--color-insight-gold);
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+
+      /* Services dropdown trigger */
+      .nav-desktop__dropdown {
+        position: relative;
+      }
+
+      .nav-desktop__dropdown-trigger {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 8px 0;
+        transition: color var(--transition-fast);
+      }
+
+      .nav-desktop__dropdown-trigger:hover {
+        color: var(--color-white);
+      }
+
+      .nav-desktop__dropdown-trigger:focus-visible {
+        outline: 2px solid var(--color-insight-gold);
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+
+      .nav-desktop__chevron {
+        width: 12px;
+        height: 12px;
+        transition: transform var(--transition-fast);
+      }
+
+      .nav-desktop__dropdown-trigger:hover .nav-desktop__chevron,
+      .nav-desktop__dropdown-trigger[aria-expanded="true"]
+        .nav-desktop__chevron {
+        transform: rotate(180deg);
+      }
+
+      /* Mega Menu */
+      .mega-menu {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--color-white);
+        box-shadow: var(--shadow-3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition:
+          opacity var(--transition-fast),
+          transform var(--transition-fast),
+          visibility var(--transition-fast);
+      }
+
+      .mega-menu--open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .mega-menu__inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 40px 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+      }
+
+      .mega-menu__col-title {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--color-mid-gray);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 16px;
+      }
+
+      .mega-menu__links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .mega-menu__link {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--color-dark-gray);
+        padding: 8px 10px;
+        margin: 0 -10px;
+        border-radius: 6px;
+        transition:
+          background var(--transition-fast),
+          color var(--transition-fast);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mega-menu__link:hover {
+        background: var(--color-off-white);
+        color: var(--color-navy-depth);
+      }
+
+      .mega-menu__badge {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--color-navy-depth);
+        background: linear-gradient(90deg, #d4a017, #e8b830);
+        padding: 2px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .mega-menu__cta-box {
+        background: var(--color-off-white);
+        border-radius: 8px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .mega-menu__cta-title {
+        font-family: var(--font-heading);
+        font-size: 20px;
+        color: var(--color-near-black);
+      }
+
+      .mega-menu__cta-text {
+        font-size: 14px;
+        color: var(--color-dark-gray);
+        line-height: 1.6;
+      }
+
+      .mega-menu__cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-intelligence-blue);
+        transition: color var(--transition-fast);
+      }
+
+      .mega-menu__cta-link:hover {
+        color: var(--color-navy-depth);
+      }
+
+      .mega-menu__cta-link svg {
+        transition: transform var(--transition-fast);
+      }
+
+      .mega-menu__cta-link:hover svg {
+        transform: translateX(4px);
+      }
+
+      /* Mobile Toggle */
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 2001;
+      }
+
+      .nav-toggle__bar {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-white);
+        border-radius: 2px;
+        transition:
+          transform var(--transition-fast),
+          opacity var(--transition-fast);
+      }
+
+      .nav-toggle__bar + .nav-toggle__bar {
+        margin-top: 6px;
+      }
+
+      .nav-toggle--open .nav-toggle__bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .nav-toggle--open .nav-toggle__bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle--open .nav-toggle__bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* Mobile Nav Overlay */
+      .nav-mobile {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--color-navy-depth);
+        z-index: 2000;
+        flex-direction: column;
+        padding: 100px 32px 40px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 300ms ease;
+      }
+
+      .nav-mobile--open {
+        transform: translateX(0);
+      }
+
+      .nav-mobile__link {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--color-white);
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: block;
+        transition: color var(--transition-fast);
+      }
+
+      .nav-mobile__link:hover {
+        color: var(--color-insight-gold);
+      }
+
+      .nav-mobile__accordion {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-mobile__accordion-trigger {
+        background: none;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--color-white);
+        padding: 16px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .nav-mobile__accordion-trigger svg {
+        transition: transform var(--transition-fast);
+      }
+
+      .nav-mobile__accordion-trigger[aria-expanded="true"] svg {
+        transform: rotate(180deg);
+      }
+
+      .nav-mobile__accordion-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms ease;
+      }
+
+      .nav-mobile__accordion-panel--open {
+        max-height: 600px;
+      }
+
+      .nav-mobile__sublink {
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 10px 0 10px 16px;
+        transition: color var(--transition-fast);
+      }
+
+      .nav-mobile__sublink:hover {
+        color: var(--color-white);
+      }
+
+      .nav-mobile__cta {
+        margin-top: auto;
+        padding-top: 32px;
+      }
+
+      .nav-mobile__cta .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 18px 32px;
+        font-size: 17px;
+      }
+
+      /* ================================================================
+       SECTION 1: HERO (wireframe section 1)
+       ================================================================ */
+      .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(12, 27, 58, 0.92) 0%,
+            rgba(26, 49, 88, 0.85) 50%,
+            rgba(12, 27, 58, 0.75) 100%
+          ),
+          linear-gradient(135deg, #0c1b3a 0%, #1a3158 100%);
+        padding: 128px 80px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(30, 58, 110, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(30, 58, 110, 0.2) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .hero__content {
+        max-width: 700px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero__title {
+        font-family: var(--font-heading);
+        font-size: 56px;
+        font-weight: 400;
+        color: var(--color-white);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-top: 16px;
+      }
+
+      .hero__subtitle {
+        font-family: var(--font-body);
+        font-size: 20px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        margin-top: 24px;
+        max-width: 600px;
+      }
+
+      .hero__actions {
+        margin-top: 40px;
+        display: flex;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+      }
+
+      .hero__scroll {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ================================================================
+       SECTION 2: PROBLEM STATEMENT (fond blanc)
+       ================================================================ */
+      .problem {
+        padding: var(--space-4xl) 80px;
+        background: var(--color-bg-primary);
+      }
+
+      .problem__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .problem__intro {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--color-text-primary);
+        margin-top: 24px;
+      }
+
+      .problem__grid {
+        max-width: var(--max-width);
+        margin: var(--space-2xl) auto 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+        align-items: start;
+      }
+
+      .problem__questions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .problem__question {
+        font-family: var(--font-heading);
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--color-text-heading);
+        line-height: 1.35;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .problem__question::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-insight-gold);
+      }
+
+      .problem__answer {
+        padding: var(--space-xl);
+        background: var(--color-off-white);
+        border-radius: 8px;
+        border-left: 3px solid var(--color-insight-gold);
+      }
+
+      .problem__answer p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--color-text-primary);
+      }
+
+      .problem__answer p + p {
+        margin-top: 16px;
+      }
+
+      .problem__answer-highlight {
+        font-weight: 600;
+        color: var(--color-text-heading);
+      }
+
+      /* ================================================================
+       SECTION 3: CORE INTELLIGENCE AREAS (fond off-white)
+       ================================================================ */
+      .services {
+        padding: var(--space-4xl) 80px;
+        background: var(--color-bg-secondary);
+      }
+
+      .services__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .services__grid {
+        max-width: var(--max-width);
+        margin: var(--space-3xl) auto 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+      }
+
+      /* Service Card (from 06-composants-ui) */
+      .card {
+        background: var(--color-white);
+        border: 1px solid var(--color-light-gray);
+        border-radius: 8px;
+        padding: var(--space-xl);
+        position: relative;
+        cursor: pointer;
+        transition:
+          box-shadow var(--transition-fast),
+          border-color var(--transition-fast),
+          transform var(--transition-fast);
+        box-shadow: var(--shadow-1);
+      }
+
+      .card:hover {
+        box-shadow: var(--shadow-2);
+        border-color: rgba(30, 58, 110, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .card__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: rgba(30, 58, 110, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--space-md);
+        color: var(--color-intelligence-blue);
+      }
+
+      .card__title {
+        font-family: var(--font-body);
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--color-text-heading);
+        line-height: 1.35;
+        margin-bottom: 12px;
+      }
+
+      .card__desc {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--color-text-primary);
+        margin-bottom: 20px;
+      }
+
+      .card__link {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-intelligence-blue);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color var(--transition-fast);
+      }
+
+      .card__link svg {
+        transition: transform var(--transition-fast);
+      }
+
+      .card:hover .card__link {
+        color: var(--color-navy-depth);
+      }
+
+      .card:hover .card__link svg {
+        transform: translateX(4px);
+      }
+
+      /* Clickable card stretch link */
+      .card__link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+      }
+
+      .services__cta {
+        text-align: center;
+        margin-top: var(--space-2xl);
+      }
+
+      /* ================================================================
+       SECTION 4: GEOGRAPHIC COVERAGE (fond navy)
+       ================================================================ */
+      .geography {
+        padding: var(--space-4xl) 80px;
+        background: var(--color-navy-depth);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .geography::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.04;
+        background-image:
+          linear-gradient(
+            30deg,
+            var(--color-intelligence-blue) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            150deg,
+            var(--color-intelligence-blue) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px;
+        pointer-events: none;
+      }
+
+      .geography__inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .geography__header {
+        text-align: center;
+        margin-bottom: var(--space-3xl);
+      }
+
+      .geography__layout {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        gap: var(--space-3xl);
+        align-items: start;
+      }
+
+      .geography__text p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .geography__text p + p {
+        margin-top: 16px;
+      }
+
+      .geography__regions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: var(--space-lg);
+      }
+
+      .geography__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--color-white);
+        letter-spacing: 0.02em;
+        transition: background var(--transition-fast);
+      }
+
+      .geography__badge:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .geography__columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+      }
+
+      .geography__column h4 {
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-insight-gold);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 12px;
+      }
+
+      .geography__column ul {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .geography__column li {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        padding-left: 14px;
+        position: relative;
+      }
+
+      .geography__column li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--color-intelligence-blue);
+      }
+
+      /* ================================================================
+       SECTION 5: WHY MBHIDIYA (fond blanc)
+       ================================================================ */
+      .why {
+        padding: var(--space-4xl) 80px;
+        background: var(--color-bg-primary);
+      }
+
+      .why__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto var(--space-3xl);
+      }
+
+      .why__intro {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--color-text-primary);
+        margin-top: 20px;
+      }
+
+      .why__grid {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+      }
+
+      .why__item {
+        padding: var(--space-lg);
+        text-align: center;
+        position: relative;
+      }
+
+      .why__item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background: var(--color-light-gray);
+      }
+
+      .why__item-title {
+        font-family: var(--font-body);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-text-heading);
+        margin-bottom: 12px;
+      }
+
+      .why__item-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--color-text-primary);
+      }
+
+      /* ================================================================
+       SECTION 6: PROCESS TEASER (fond off-white)
+       ================================================================ */
+      .process {
+        padding: var(--space-4xl) 80px;
+        background: var(--color-bg-secondary);
+      }
+
+      .process__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto var(--space-3xl);
+      }
+
+      .process__timeline {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .process__timeline::before {
+        content: "";
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        right: 24px;
+        height: 2px;
+        background: var(--color-light-gray);
+      }
+
+      .process__step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding: 0 12px;
+      }
+
+      .process__number {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--color-navy-depth);
+        color: var(--color-insight-gold);
+        font-family: var(--font-heading);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+      }
+
+      .process__step-title {
+        font-family: var(--font-body);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-text-heading);
+        margin-top: 16px;
+        line-height: 1.3;
+      }
+
+      .process__step-desc {
+        font-size: 14px;
+        color: var(--color-text-primary);
+        margin-top: 8px;
+        line-height: 1.5;
+      }
+
+      .process__cta {
+        text-align: center;
+        margin-top: var(--space-2xl);
+      }
+
+      /* ================================================================
+       SECTION 7: CTA FINAL (fond navy gradient)
+       ================================================================ */
+      .cta-final {
+        padding: var(--space-4xl) 80px;
+        background: linear-gradient(135deg, #0c1b3a 0%, #1a3158 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-final::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(212, 160, 23, 0.06) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      .cta-final__inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-final__title {
+        font-family: var(--font-heading);
+        font-size: 44px;
+        font-weight: 400;
+        color: var(--color-white);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .cta-final__btn {
+        margin-top: 40px;
+      }
+
+      /* ================================================================
+       FOOTER (from 06-composants-ui section 7)
+       ================================================================ */
+      .footer {
+        background: var(--color-near-black);
+        padding: 80px 80px 32px;
+      }
+
+      .footer__inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      .footer__grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        gap: var(--space-2xl);
+      }
+
+      .footer__brand {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .footer__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer__logo-symbol {
+        height: 36px;
+        width: auto;
+      }
+
+      .footer__logo-name {
+        font-family: var(--font-heading);
+        font-size: 20px;
+        color: var(--color-white);
+      }
+
+      .footer__values {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+      }
+
+      .footer__values strong {
+        color: var(--color-white);
+        font-weight: 600;
+      }
+
+      .footer__tagline {
+        font-family: var(--font-heading);
+        font-size: 15px;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 8px;
+      }
+
+      .footer__col-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-white);
+        margin-bottom: 20px;
+        letter-spacing: 0.02em;
+      }
+
+      .footer__links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer__link {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color var(--transition-fast);
+      }
+
+      .footer__link:hover {
+        color: var(--color-white);
+      }
+
+      .footer__divider {
+        border: none;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: var(--space-xl) 0;
+      }
+
+      .footer__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .footer__copyright {
+        font-size: 13px;
+        color: var(--color-mid-gray);
+      }
+
+      .footer__legal {
+        display: flex;
+        gap: 24px;
+      }
+
+      .footer__legal a {
+        font-size: 13px;
+        color: var(--color-mid-gray);
+        transition: color var(--transition-fast);
+      }
+
+      .footer__legal a:hover {
+        color: var(--color-white);
+      }
+
+      /* ================================================================
+       SCROLL REVEAL ANIMATION
+       ================================================================ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 500ms ease-out,
+          transform 500ms ease-out;
+      }
+
+      .reveal--visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Stagger for cards */
+      .reveal-stagger > .reveal:nth-child(2) {
+        transition-delay: 80ms;
+      }
+      .reveal-stagger > .reveal:nth-child(3) {
+        transition-delay: 160ms;
+      }
+      .reveal-stagger > .reveal:nth-child(4) {
+        transition-delay: 80ms;
+      }
+      .reveal-stagger > .reveal:nth-child(5) {
+        transition-delay: 160ms;
+      }
+      .reveal-stagger > .reveal:nth-child(6) {
+        transition-delay: 240ms;
+      }
+
+      /* ================================================================
+       RESPONSIVE - TABLET (max-width: 1024px)
+       ================================================================ */
+      @media (max-width: 1024px) {
+        .container,
+        .hero,
+        .problem,
+        .services,
+        .geography,
+        .why,
+        .process,
+        .cta-final,
+        .footer {
+          padding-left: 48px;
+          padding-right: 48px;
+        }
+
+        .header__inner {
+          padding: 0 48px;
+        }
+
+        .mega-menu__inner {
+          padding: 32px 48px;
+          gap: 24px;
+        }
+
+        .hero__title {
+          font-size: 48px;
+        }
+
+        .nav-desktop {
+          gap: 24px;
+        }
+
+        .services__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .why__grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .why__item:nth-child(3)::after {
+          display: none;
+        }
+
+        .why__item:nth-child(4),
+        .why__item:nth-child(5) {
+          grid-column: span 1;
+        }
+
+        .geography__layout {
+          grid-template-columns: 1fr;
+          gap: var(--space-2xl);
+        }
+
+        .footer__grid {
+          grid-template-columns: 1fr 1fr;
+          gap: var(--space-xl);
+        }
+      }
+
+      /* ================================================================
+       RESPONSIVE - MOBILE (max-width: 900px)
+       ================================================================ */
+      @media (max-width: 900px) {
+        .nav-desktop {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .nav-mobile {
+          display: flex;
+        }
+
+        .container,
+        .hero,
+        .problem,
+        .services,
+        .geography,
+        .why,
+        .process,
+        .cta-final,
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .header__inner {
+          padding: 0 20px;
+        }
+
+        .hero {
+          padding-top: 120px;
+          padding-bottom: 80px;
+          min-height: 90vh;
+        }
+
+        .hero__title {
+          font-size: 36px;
+          line-height: 1.15;
+        }
+
+        .hero__subtitle {
+          font-size: 18px;
+        }
+
+        .hero__actions {
+          flex-direction: column;
+        }
+
+        .hero__actions .btn {
+          text-align: center;
+          width: 100%;
+        }
+
+        .hero__scroll {
+          display: none;
+        }
+
+        .section-title {
+          font-size: 26px;
+        }
+
+        .problem,
+        .services,
+        .why,
+        .process,
+        .geography {
+          padding-top: var(--space-3xl);
+          padding-bottom: var(--space-3xl);
+        }
+
+        .problem__grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-lg);
+        }
+
+        .services__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .why__grid {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .why__item {
+          text-align: left;
+          padding: var(--space-lg) 0;
+          border-bottom: 1px solid var(--color-light-gray);
+        }
+
+        .why__item:not(:last-child)::after {
+          display: none;
+        }
+
+        .why__item:last-child {
+          border-bottom: none;
+        }
+
+        .process__timeline {
+          flex-direction: column;
+          gap: var(--space-xl);
+        }
+
+        .process__timeline::before {
+          top: 0;
+          bottom: 0;
+          left: 24px;
+          width: 2px;
+          height: auto;
+          right: auto;
+        }
+
+        .process__step {
+          flex-direction: row;
+          text-align: left;
+          gap: var(--space-md);
+          padding: 0;
+        }
+
+        .process__number {
+          flex-shrink: 0;
+        }
+
+        .cta-final__title {
+          font-size: 32px;
+        }
+
+        .geography__columns {
+          grid-template-columns: 1fr;
+        }
+
+        .footer__grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-xl);
+        }
+
+        .footer__bottom {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .footer {
+          padding: 48px 20px 24px;
+        }
+      }
+
+      /* ================================================================
+       RESPONSIVE - SMALL MOBILE (max-width: 480px)
+       ================================================================ */
+      @media (max-width: 480px) {
+        .logo__name {
+          font-size: 18px;
+        }
+
+        .logo__tagline {
+          font-size: 8px;
+        }
+
+        .logo__symbol {
+          height: 36px;
+        }
+
+        .hero__title {
+          font-size: 30px;
+        }
+
+        .problem__question {
+          font-size: 19px;
+        }
+
+        .cta-final__title {
+          font-size: 28px;
+        }
+      }
+
+      /* ================================================================
+       REDUCED MOTION (from 02-charte-graphique)
+       ================================================================ */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ====================================================================
+       HEADER
+       ==================================================================== -->
+    <header class="header header--transparent" id="header">
+      <div class="header__inner">
+        <a href="/" class="logo" aria-label="Mbhidiya Intelligence - Home">
+          <svg
+            class="logo__symbol"
+            viewBox="0 0 100 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M50 8 C20 8, 2 35, 10 65"
+              stroke="#C0392B"
+              stroke-width="8"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M50 22 C28 22, 14 42, 20 62"
+              stroke="#1D7A47"
+              stroke-width="7"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M50 36 C36 36, 26 48, 30 60"
+              stroke="#D4A017"
+              stroke-width="6"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="68"
+              r="16"
+              stroke="#0C1B3A"
+              stroke-width="3"
+              fill="none"
+            />
+            <circle cx="50" cy="68" r="6" fill="#0C1B3A" />
+            <ellipse
+              cx="50"
+              cy="68"
+              rx="24"
+              ry="10"
+              stroke="#0C1B3A"
+              stroke-width="2"
+              fill="none"
+              opacity="0.5"
+            />
+            <circle cx="74" cy="68" r="2.5" fill="#0C1B3A" />
+            <circle cx="26" cy="68" r="2.5" fill="#0C1B3A" />
+          </svg>
+          <div class="logo__text">
+            <span class="logo__name">Mbhidiya</span>
+            <span class="logo__tagline">Intelligence</span>
+          </div>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Main navigation">
+          <div class="nav-desktop__dropdown">
+            <button
+              class="nav-desktop__dropdown-trigger"
+              aria-expanded="false"
+              aria-controls="mega-menu"
+              id="services-trigger"
+            >
+              Services
+              <svg class="nav-desktop__chevron" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M3 4.5L6 7.5L9 4.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <a href="about.html" class="nav-desktop__link">About</a>
+          <a href="/canada-africa" class="nav-desktop__link"
+            >Canada &amp; Africa</a
+          >
+          <a href="/sectors" class="nav-desktop__link">Sectors</a>
+          <a href="/insights" class="nav-desktop__link">Insights</a>
+          <a href="/contact" class="btn btn--gold">Request a Consultation</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="nav-mobile"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+
+      <!-- Mega Menu -->
+      <div
+        class="mega-menu"
+        id="mega-menu"
+        role="region"
+        aria-label="Services menu"
+      >
+        <div class="mega-menu__inner">
+          <div>
+            <div class="mega-menu__col-title">People Intelligence</div>
+            <ul class="mega-menu__links">
+              <li>
+                <a
+                  href="service-human-risk-intelligence.html"
+                  class="mega-menu__link"
+                  >Human Risk Intelligence</a
+                >
+              </li>
+              <li>
+                <a href="service-executive-vetting.html" class="mega-menu__link"
+                  >Executive Vetting &amp; Leadership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-reputation-digital-footprint.html"
+                  class="mega-menu__link"
+                  >Reputation &amp; Digital Footprint</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-network-influence-intelligence.html"
+                  class="mega-menu__link"
+                  >Network &amp; Influence Intelligence</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="mega-menu__col-title">Corporate Intelligence</div>
+            <ul class="mega-menu__links">
+              <li>
+                <a
+                  href="service-african-cross-border-intelligence.html"
+                  class="mega-menu__link"
+                  >African Cross-Border
+                  <span class="mega-menu__badge">Flagship</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-corporate-counterparty-intelligence.html"
+                  class="mega-menu__link"
+                  >Corporate &amp; Counterparty</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-pre-investment-transaction-intelligence.html"
+                  class="mega-menu__link"
+                  >Pre-Investment &amp; Transaction</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-third-party-supplier-integrity.html"
+                  class="mega-menu__link"
+                  >Third-Party &amp; Supplier Integrity</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="mega-menu__col-title">Strategic Intelligence</div>
+            <ul class="mega-menu__links">
+              <li>
+                <a
+                  href="service-market-entry-strategic-intelligence.html"
+                  class="mega-menu__link"
+                  >Market Entry &amp; Strategic</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-fraud-integrity-intelligence.html"
+                  class="mega-menu__link"
+                  >Fraud &amp; Integrity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service-continuous-monitoring.html"
+                  class="mega-menu__link"
+                  >Continuous Monitoring</a
+                >
+              </li>
+            </ul>
+            <div class="mega-menu__cta-box">
+              <a href="services.html" class="mega-menu__cta-link" style="margin-bottom: 8px;">
+                View All Services
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8H13M13 8L9 4M13 8L9 12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <div class="mega-menu__cta-title">Need guidance?</div>
+              <p class="mega-menu__cta-text">
+                Not sure which intelligence service fits your situation?
+              </p>
+              <a href="/contact" class="mega-menu__cta-link">
+                Request a Consultation
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8H13M13 8L9 4M13 8L9 12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+      <div class="nav-mobile__accordion">
+        <button
+          class="nav-mobile__accordion-trigger"
+          aria-expanded="false"
+          aria-controls="mobile-services"
+        >
+          Services
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M5 8L10 13L15 8"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="nav-mobile__accordion-panel" id="mobile-services">
+          <a
+            href="service-human-risk-intelligence.html"
+            class="nav-mobile__sublink"
+            >Human Risk Intelligence</a
+          >
+          <a
+            href="service-african-cross-border-intelligence.html"
+            class="nav-mobile__sublink"
+            >African Cross-Border Intelligence</a
+          >
+          <a
+            href="service-corporate-counterparty-intelligence.html"
+            class="nav-mobile__sublink"
+            >Corporate &amp; Counterparty</a
+          >
+          <a href="service-executive-vetting.html" class="nav-mobile__sublink"
+            >Executive Vetting</a
+          >
+          <a
+            href="service-pre-investment-transaction-intelligence.html"
+            class="nav-mobile__sublink"
+            >Pre-Investment &amp; Transaction</a
+          >
+          <a
+            href="service-reputation-digital-footprint.html"
+            class="nav-mobile__sublink"
+            >Reputation &amp; Digital Footprint</a
+          >
+          <a
+            href="service-network-influence-intelligence.html"
+            class="nav-mobile__sublink"
+            >Network &amp; Influence</a
+          >
+          <a
+            href="service-market-entry-strategic-intelligence.html"
+            class="nav-mobile__sublink"
+            >Market Entry &amp; Strategic</a
+          >
+          <a
+            href="service-third-party-supplier-integrity.html"
+            class="nav-mobile__sublink"
+            >Third-Party &amp; Supplier</a
+          >
+          <a
+            href="service-fraud-integrity-intelligence.html"
+            class="nav-mobile__sublink"
+            >Fraud &amp; Integrity</a
+          >
+          <a href="service-continuous-monitoring.html" class="nav-mobile__sublink"
+            >Continuous Monitoring</a
+          >
+        </div>
+      </div>
+      <a href="about.html" class="nav-mobile__link">About</a>
+      <a href="/canada-africa" class="nav-mobile__link">Canada &amp; Africa</a>
+      <a href="/sectors" class="nav-mobile__link">Sectors</a>
+      <a href="/insights" class="nav-mobile__link">Insights</a>
+      <div class="nav-mobile__cta">
+        <a href="/contact" class="btn btn--gold">Request a Consultation</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ==================================================================
+         SECTION 1: HERO
+         ================================================================== -->
+      <section class="hero">
+        <div class="hero__content">
+          <span class="overline">Cross-Border Intelligence</span>
+          <h1 class="hero__title">Know Who You're Dealing&nbsp;With.</h1>
+          <p class="hero__subtitle">
+            We help organisations investigate the people, companies, networks
+            and markets behind critical business decisions across Canada
+            and&nbsp;Africa.
+          </p>
+          <div class="hero__actions">
+            <a href="/contact" class="btn btn--gold"
+              >Request an Intelligence Consultation</a
+            >
+            <a href="/services" class="btn btn--outline-white"
+              >Explore Our Services</a
+            >
+          </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M10 4V16M10 16L5 11M10 16L15 11"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         SECTION 2: PROBLEM STATEMENT
+         ================================================================== -->
+      <section class="problem">
+        <div class="problem__header reveal">
+          <h2 class="section-title">Intelligence for High-Stakes Decisions</h2>
+          <p class="problem__intro">
+            Business decisions often depend on trust. You hire an executive. You
+            acquire a company. You select a local partner. You enter a new
+            market. You appoint an intermediary. You invest capital. You rely on
+            a&nbsp;supplier.
+          </p>
+          <p class="problem__intro" style="margin-top: 16px">
+            The information available on paper may look reassuring. But public
+            profiles, corporate registrations, references and standard due
+            diligence do not always reveal the full&nbsp;picture.
+          </p>
+        </div>
+
+        <div class="problem__grid">
+          <div class="problem__questions reveal">
+            <div class="problem__question">Who are we really dealing with?</div>
+            <div class="problem__question">Who controls the company?</div>
+            <div class="problem__question">
+              Who influences the decision-makers?
+            </div>
+            <div class="problem__question">What information is missing?</div>
+            <div class="problem__question">
+              What risks are hidden beneath the surface?
+            </div>
+            <div class="problem__question">
+              What could become our problem after we sign the deal?
+            </div>
+          </div>
+          <div class="problem__answer reveal">
+            <p>
+              Mbhidiya Intelligence helps organisations identify the people,
+              relationships, interests, reputational issues and intelligence
+              gaps that may affect a&nbsp;decision.
+            </p>
+            <p class="problem__answer-highlight">
+              We turn fragmented information into a clearer understanding
+              of&nbsp;risk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         SECTION 3: CORE INTELLIGENCE AREAS
+         ================================================================== -->
+      <section class="services">
+        <div class="services__header reveal">
+          <span class="overline">Our Core Intelligence Areas</span>
+          <h2 class="section-title">Six Dimensions of Intelligence</h2>
+        </div>
+
+        <div class="services__grid reveal-stagger">
+          <!-- Card 1: Human Risk -->
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="8" r="4" />
+                <path d="M6 21v-2a4 4 0 014-4h2" />
+                <circle cx="17" cy="18" r="3" />
+                <path d="M17 15v0" />
+                <path d="M21 18h-1" />
+                <path d="M17 21v0" />
+                <path d="M14 18h-1" />
+              </svg>
+            </div>
+            <h3 class="card__title">Human Risk Intelligence</h3>
+            <p class="card__desc">
+              Understand the people you are considering hiring, appointing,
+              partnering with or trusting.
+            </p>
+            <span class="card__link">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Card 2: Corporate -->
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18z" />
+                <path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2" />
+                <path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2" />
+                <path d="M10 6h4" />
+                <path d="M10 10h4" />
+                <path d="M10 14h4" />
+                <path d="M10 18h4" />
+              </svg>
+            </div>
+            <h3 class="card__title">
+              Corporate &amp; Counterparty Intelligence
+            </h3>
+            <p class="card__desc">
+              Look beyond company registrations and identify ownership, control,
+              relationships and potential red flags.
+            </p>
+            <span class="card__link">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Card 3: Cross-Border -->
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
+                />
+              </svg>
+            </div>
+            <h3 class="card__title">Cross-Border Due Diligence</h3>
+            <p class="card__desc">
+              Make informed decisions when entering unfamiliar markets or
+              engaging unfamiliar people and companies.
+            </p>
+            <span class="card__link">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Card 4: Transaction -->
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+                <path d="M6.5 12.5L2 17" />
+                <path d="M20 12l-7.5 7.5" />
+              </svg>
+            </div>
+            <h3 class="card__title">Transaction Intelligence</h3>
+            <p class="card__desc">
+              Support investment, acquisition, partnership and joint-venture
+              decisions with intelligence beyond conventional financial and
+              legal due diligence.
+            </p>
+            <span class="card__link">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Card 5: Reputation & Network -->
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <h3 class="card__title">Reputation &amp; Network Intelligence</h3>
+            <p class="card__desc">
+              Understand how individuals and organisations are connected and
+              what those connections may mean.
+            </p>
+            <span class="card__link">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Card 6: Market & Strategic -->
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3 class="card__title">Market &amp; Strategic Intelligence</h3>
+            <p class="card__desc">
+              Assess the political, commercial, regulatory and stakeholder
+              environment before entering or expanding into a market.
+            </p>
+            <span class="card__link">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="services__cta reveal">
+          <a href="/services" class="btn btn--outline">View All Services</a>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         SECTION 4: GEOGRAPHIC COVERAGE
+         ================================================================== -->
+      <section class="geography">
+        <div class="geography__inner">
+          <div class="geography__header reveal">
+            <span class="overline"
+              >One Intelligence Firm. Connected Markets.</span
+            >
+            <h2 class="section-title section-title--light">
+              Canada &amp; Africa
+            </h2>
+            <p
+              class="section-subtitle section-subtitle--light mx-auto"
+              style="text-align: center"
+            >
+              Mbhidiya Intelligence supports organisations operating in Canada,
+              Africa and cross-border commercial environments connecting the
+              two.
+            </p>
+          </div>
+
+          <div class="geography__layout">
+            <div class="geography__text reveal">
+              <p>
+                Our work is particularly relevant to organisations dealing with
+                unfamiliar counterparties, new markets, complex ownership
+                structures and high-trust relationships.
+              </p>
+              <p>
+                The African Continental Free Trade Area is intended to deepen
+                intra-African trade, investment and regional value chains. As
+                organisations expand across borders, they increasingly need to
+                make decisions about people and companies they have never worked
+                with&nbsp;before.
+              </p>
+              <p>
+                <strong style="color: var(--color-white)"
+                  >The easier it becomes to connect markets, the more important
+                  it becomes to understand who operates
+                  within&nbsp;them.</strong
+                >
+              </p>
+
+              <div class="geography__regions">
+                <span class="geography__badge">Southern Africa</span>
+                <span class="geography__badge">Eastern Africa</span>
+                <span class="geography__badge">West Africa</span>
+                <span class="geography__badge">Central Africa</span>
+                <span class="geography__badge">North Africa</span>
+                <span class="geography__badge">Canada</span>
+              </div>
+            </div>
+
+            <div class="geography__columns reveal">
+              <div class="geography__column">
+                <h4>Canada</h4>
+                <ul>
+                  <li>Executive and leadership intelligence</li>
+                  <li>Corporate and third-party due diligence</li>
+                  <li>Fraud and integrity inquiries</li>
+                  <li>Reputation and digital footprint</li>
+                  <li>Vendor and partner intelligence</li>
+                  <li>Cross-border intelligence</li>
+                  <li>Africa market-entry intelligence</li>
+                </ul>
+              </div>
+              <div class="geography__column">
+                <h4>Africa</h4>
+                <ul>
+                  <li>Local companies</li>
+                  <li>Business partners &amp; executives</li>
+                  <li>Investors &amp; suppliers</li>
+                  <li>Agents and intermediaries</li>
+                  <li>Beneficial ownership</li>
+                  <li>Political exposure</li>
+                  <li>Reputation &amp; networks</li>
+                  <li>Market-entry risks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         SECTION 5: WHY MBHIDIYA
+         ================================================================== -->
+      <section class="why">
+        <div class="why__header reveal">
+          <span class="overline">Why Mbhidiya Intelligence</span>
+          <h2 class="section-title">The Difference Is Understanding</h2>
+          <p class="why__intro">
+            Information is increasingly available. Judgment is not. Our value is
+            not simply finding a record or running a search. Our value is
+            helping clients understand what matters, what does not, what is
+            missing, and what may create future&nbsp;risk.
+          </p>
+        </div>
+
+        <div class="why__grid reveal">
+          <div class="why__item">
+            <div class="why__item-title">Decision-Focused</div>
+            <p class="why__item-text">
+              We start with the client's decision. Every inquiry is shaped by
+              what needs to be decided, not by a standard template.
+            </p>
+          </div>
+          <div class="why__item">
+            <div class="why__item-title">Cross-Border</div>
+            <p class="why__item-text">
+              We understand that information, people and business relationships
+              do not stop at national borders.
+            </p>
+          </div>
+          <div class="why__item">
+            <div class="why__item-title">Evidence-Based</div>
+            <p class="why__item-text">
+              We distinguish between verified information, allegations,
+              indicators and intelligence gaps.
+            </p>
+          </div>
+          <div class="why__item">
+            <div class="why__item-title">Confidential</div>
+            <p class="why__item-text">
+              We treat sensitive matters accordingly. Discretion is not a
+              feature. It is how we operate.
+            </p>
+          </div>
+          <div class="why__item">
+            <div class="why__item-title">Independent</div>
+            <p class="why__item-text">
+              Our role is to provide intelligence that helps clients make their
+              own informed decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         SECTION 6: PROCESS TEASER
+         ================================================================== -->
+      <section class="process">
+        <div class="process__header reveal">
+          <span class="overline">How We Work</span>
+          <h2 class="section-title">From Question to Assessment</h2>
+        </div>
+
+        <div class="process__timeline reveal">
+          <div class="process__step">
+            <div class="process__number">1</div>
+            <div>
+              <div class="process__step-title">Define the Decision</div>
+              <p class="process__step-desc">
+                Every investigation starts with a practical question the client
+                needs to answer.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__number">2</div>
+            <div>
+              <div class="process__step-title">Identify the Gap</div>
+              <p class="process__step-desc">
+                We determine what remains unclear and what could materially
+                affect the decision.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__number">3</div>
+            <div>
+              <div class="process__step-title">Investigate</div>
+              <p class="process__step-desc">
+                We use appropriate research and investigative methods to collect
+                and verify information.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__number">4</div>
+            <div>
+              <div class="process__step-title">Connect the Dots</div>
+              <p class="process__step-desc">
+                We examine people, companies, ownership structures, digital
+                footprints and relationships.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__number">5</div>
+            <div>
+              <div class="process__step-title">Deliver an Assessment</div>
+              <p class="process__step-desc">
+                A clear assessment of relevant intelligence, identified risks
+                and recommended next steps.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="process__cta reveal">
+          <a href="/process" class="btn btn--outline"
+            >Learn More About Our Process</a
+          >
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         SECTION 7: CTA FINAL
+         ================================================================== -->
+      <section class="cta-final">
+        <div class="cta-final__inner reveal">
+          <h2 class="cta-final__title">
+            Make Your Next Decision With Better Intelligence.
+          </h2>
+          <div class="cta-final__btn">
+            <a href="/contact" class="btn btn--gold btn--large"
+              >Request a Confidential Consultation</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__grid">
+          <!-- Brand Column -->
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <svg
+                class="footer__logo-symbol"
+                viewBox="0 0 100 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M50 8 C20 8, 2 35, 10 65"
+                  stroke="#C0392B"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M50 22 C28 22, 14 42, 20 62"
+                  stroke="#1D7A47"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M50 36 C36 36, 26 48, 30 60"
+                  stroke="#D4A017"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <circle
+                  cx="50"
+                  cy="68"
+                  r="16"
+                  stroke="white"
+                  stroke-width="3"
+                  fill="none"
+                />
+                <circle cx="50" cy="68" r="6" fill="white" />
+                <ellipse
+                  cx="50"
+                  cy="68"
+                  rx="24"
+                  ry="10"
+                  stroke="white"
+                  stroke-width="2"
+                  fill="none"
+                  opacity="0.5"
+                />
+                <circle cx="74" cy="68" r="2.5" fill="white" />
+                <circle cx="26" cy="68" r="2.5" fill="white" />
+              </svg>
+              <span class="footer__logo-name">Mbhidiya</span>
+            </div>
+            <p class="footer__values">
+              <strong>Discretion.</strong> <strong>Loyalty.</strong>
+              <strong>Precision.</strong>
+            </p>
+            <p class="footer__tagline">Where Intelligence Meets Action.</p>
+          </div>
+
+          <!-- Services Column -->
+          <div>
+            <div class="footer__col-title">Services</div>
+            <div class="footer__links">
+              <a href="service-human-risk-intelligence.html" class="footer__link"
+                >Human Risk Intelligence</a
+              >
+              <a
+                href="service-corporate-counterparty-intelligence.html"
+                class="footer__link"
+                >Corporate &amp; Counterparty</a
+              >
+              <a
+                href="service-african-cross-border-intelligence.html"
+                class="footer__link"
+                >Cross-Border Intelligence</a
+              >
+              <a
+                href="service-pre-investment-transaction-intelligence.html"
+                class="footer__link"
+                >Transaction Intelligence</a
+              >
+              <a href="service-executive-vetting.html" class="footer__link"
+                >Executive Vetting</a
+              >
+              <a
+                href="service-reputation-digital-footprint.html"
+                class="footer__link"
+                >Reputation &amp; Digital Footprint</a
+              >
+              <a
+                href="service-network-influence-intelligence.html"
+                class="footer__link"
+                >Network &amp; Influence</a
+              >
+              <a
+                href="service-market-entry-strategic-intelligence.html"
+                class="footer__link"
+                >Market Entry &amp; Strategic</a
+              >
+              <a
+                href="service-third-party-supplier-integrity.html"
+                class="footer__link"
+                >Third-Party &amp; Supplier</a
+              >
+              <a
+                href="service-fraud-integrity-intelligence.html"
+                class="footer__link"
+                >Fraud &amp; Integrity</a
+              >
+              <a href="service-continuous-monitoring.html" class="footer__link"
+                >Continuous Monitoring</a
+              >
+            </div>
+          </div>
+
+          <!-- Company Column -->
+          <div>
+            <div class="footer__col-title">Company</div>
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About Us</a>
+              <a href="/process" class="footer__link">Our Process</a>
+              <a href="/sectors" class="footer__link">Sectors</a>
+              <a href="/why-mbhidiya" class="footer__link">Why Mbhidiya</a>
+              <a href="/insights" class="footer__link">Insights</a>
+              <a href="/canada-africa" class="footer__link"
+                >Canada &amp; Africa</a
+              >
+            </div>
+          </div>
+
+          <!-- Contact Column -->
+          <div>
+            <div class="footer__col-title">Contact</div>
+            <div class="footer__links">
+              <a href="mailto:contact@mbhidiya.com" class="footer__link"
+                >Secure Email</a
+              >
+              <a href="/contact" class="footer__link">Contact Form</a>
+              <a href="#" class="footer__link">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer__divider" />
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2026 Mbhidiya Intelligence. All rights reserved.
+          </p>
+          <div class="footer__legal">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/legal">Legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+       JAVASCRIPT
+       ==================================================================== -->
+    <script>
+      // Header: transparent -> solid on scroll
+      const header = document.getElementById("header");
+      function updateHeader() {
+        if (window.scrollY > 40) {
+          header.classList.remove("header--transparent");
+          header.classList.add("header--solid");
+        } else {
+          header.classList.remove("header--solid");
+          header.classList.add("header--transparent");
+        }
+      }
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      // Mega menu
+      const servicesTrigger = document.getElementById("services-trigger");
+      const megaMenu = document.getElementById("mega-menu");
+
+      servicesTrigger.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!expanded));
+        megaMenu.classList.toggle("mega-menu--open");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (
+          !megaMenu.contains(e.target) &&
+          !servicesTrigger.contains(e.target)
+        ) {
+          servicesTrigger.setAttribute("aria-expanded", "false");
+          megaMenu.classList.remove("mega-menu--open");
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          servicesTrigger.setAttribute("aria-expanded", "false");
+          megaMenu.classList.remove("mega-menu--open");
+          closeMobileNav();
+        }
+      });
+
+      // Mobile nav
+      const navToggle = document.getElementById("nav-toggle");
+      const navMobile = document.getElementById("nav-mobile");
+
+      function openMobileNav() {
+        navToggle.classList.add("nav-toggle--open");
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.setAttribute("aria-label", "Close menu");
+        navMobile.classList.add("nav-mobile--open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMobileNav() {
+        navToggle.classList.remove("nav-toggle--open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+        navMobile.classList.remove("nav-mobile--open");
+        document.body.style.overflow = "";
+      }
+
+      navToggle.addEventListener("click", function () {
+        if (this.getAttribute("aria-expanded") === "true") closeMobileNav();
+        else openMobileNav();
+      });
+
+      // Close mega-menu on link click
+      megaMenu.querySelectorAll('.mega-menu__link, .mega-menu__cta-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          servicesTrigger.setAttribute('aria-expanded', 'false');
+          megaMenu.classList.remove('mega-menu--open');
+        });
+      });
+
+      // Close mobile nav on sublink click
+      navMobile.querySelectorAll('.nav-mobile__sublink, .nav-mobile__link').forEach(function (link) {
+        link.addEventListener('click', function () { closeMobileNav(); });
+      });
+
+      // Mobile accordion
+      const accordionTrigger = document.querySelector(
+        ".nav-mobile__accordion-trigger",
+      );
+      const accordionPanel = document.getElementById("mobile-services");
+
+      accordionTrigger.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!expanded));
+        accordionPanel.classList.toggle("nav-mobile__accordion-panel--open");
+      });
+
+      // Scroll reveal (IntersectionObserver)
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal--visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+    </script>
+  </body>
+</html>

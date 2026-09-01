@@ -1,0 +1,2 @@
+- [Mbhidiya Project](memory/mbhidiya-project.md) — Site web pour Mbhidiya Intelligence, reflexion UX/UI terminee (12 docs), prochaine etape : DOCX puis dev Symfony
+- [User Profile](memory/user-profile.md) — Developpeur francophone, attend un travail approfondi, a choisi Symfony
