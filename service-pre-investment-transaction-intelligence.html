@@ -106,6 +106,13 @@
     .detail-item { background: var(--color-white); border: 1px solid var(--color-light-gray); border-radius: 8px; padding: 16px 20px; font-size: 15px; font-weight: 500; color: var(--color-text-heading); display: flex; align-items: center; gap: 10px; transition: box-shadow var(--transition-fast), border-color var(--transition-fast); }
     .detail-item:hover { box-shadow: var(--shadow-1); border-color: rgba(30,58,110,0.2); }
     .detail-item__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-insight-gold); flex-shrink: 0; }
+    .deliverable-section { padding: 80px 80px; background: var(--color-navy-depth); }
+    .deliverable-section__inner { max-width: var(--max-width); margin: 0 auto; }
+    .deliverable-section__title { font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-white); margin-bottom: 24px; }
+    .deliverable-section__text { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .deliverable-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 16px 20px; font-size: 15px; font-weight: 500; color: var(--color-white); display: flex; align-items: center; gap: 10px; }
+    .deliverable-item__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-insight-gold); flex-shrink: 0; }
     .cta-final { padding: 96px 80px; background: linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%); text-align: center; position: relative; overflow: hidden; }
     .cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(212,160,23,0.06) 0%, transparent 60%); pointer-events: none; }
     .cta-final__inner { position: relative; z-index: 1; }
@@ -173,16 +180,8 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="index.html" class="logo" aria-label="Mbhidiya Intelligence - Home">
-        <svg class="logo__symbol" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M50 8 C20 8, 2 35, 10 65" stroke="#C0392B" stroke-width="8" stroke-linecap="round" fill="none"/>
-          <path d="M50 22 C28 22, 14 42, 20 62" stroke="#1D7A47" stroke-width="7" stroke-linecap="round" fill="none"/>
-          <path d="M50 36 C36 36, 26 48, 30 60" stroke="#D4A017" stroke-width="6" stroke-linecap="round" fill="none"/>
-          <circle cx="50" cy="68" r="16" stroke="#0C1B3A" stroke-width="3" fill="none"/>
-          <circle cx="50" cy="68" r="6" fill="#0C1B3A"/>
-          <ellipse cx="50" cy="68" rx="24" ry="10" stroke="#0C1B3A" stroke-width="2" fill="none" opacity="0.5"/>
-          <circle cx="74" cy="68" r="2.5" fill="#0C1B3A"/><circle cx="26" cy="68" r="2.5" fill="#0C1B3A"/>
-        </svg>
-        <div class="logo__text"><span class="logo__name">Mbhidiya</span><span class="logo__tagline">Intelligence</span></div>
+        <img src="logo-white.png" alt="Mbhidiya Intelligence" class="logo__symbol">
+          <div class="logo__text"><span class="logo__name">Mbhidiya</span><span class="logo__tagline">Intelligence</span></div>
       </a>
       <nav class="nav-desktop" aria-label="Main navigation">
         <div class="nav-desktop__dropdown">
@@ -191,7 +190,7 @@
           </button>
         </div>
         <a href="about.html" class="nav-desktop__link">About</a>
-        <a href="/canada-africa" class="nav-desktop__link">Canada &amp; Africa</a>
+        <a href="canada-africa.html" class="nav-desktop__link">Canada &amp; Africa</a>
         <a href="/sectors" class="nav-desktop__link">Sectors</a>
         <a href="/insights" class="nav-desktop__link">Insights</a>
         <a href="/contact" class="btn btn--gold">Request a Consultation</a>
@@ -207,8 +206,8 @@
           <ul class="mega-menu__links">
             <li><a href="service-human-risk-intelligence.html" class="mega-menu__link">Human Risk Intelligence</a></li>
             <li><a href="service-executive-vetting.html" class="mega-menu__link">Executive Vetting &amp; Leadership</a></li>
-            <li><a href="services.html#reputation-digital-footprint" class="mega-menu__link">Reputation &amp; Digital Footprint</a></li>
-            <li><a href="services.html#network-influence-intelligence" class="mega-menu__link">Network &amp; Influence Intelligence</a></li>
+            <li><a href="service-reputation-digital-footprint.html" class="mega-menu__link">Reputation &amp; Digital Footprint</a></li>
+            <li><a href="service-network-influence-intelligence.html" class="mega-menu__link">Network &amp; Influence Intelligence</a></li>
           </ul>
         </div>
         <div>
@@ -217,15 +216,15 @@
             <li><a href="service-african-cross-border-intelligence.html" class="mega-menu__link">African Cross-Border <span class="mega-menu__badge">Flagship</span></a></li>
             <li><a href="service-corporate-counterparty-intelligence.html" class="mega-menu__link">Corporate &amp; Counterparty</a></li>
             <li><a href="service-pre-investment-transaction-intelligence.html" class="mega-menu__link">Pre-Investment &amp; Transaction</a></li>
-            <li><a href="services.html#third-party-supplier-integrity" class="mega-menu__link">Third-Party &amp; Supplier Integrity</a></li>
+            <li><a href="service-third-party-supplier-integrity.html" class="mega-menu__link">Third-Party &amp; Supplier Integrity</a></li>
           </ul>
         </div>
         <div>
           <div class="mega-menu__col-title">Strategic Intelligence</div>
           <ul class="mega-menu__links">
-            <li><a href="services.html#market-entry-strategic-intelligence" class="mega-menu__link">Market Entry &amp; Strategic</a></li>
-            <li><a href="services.html#fraud-integrity-intelligence" class="mega-menu__link">Fraud &amp; Integrity</a></li>
-            <li><a href="services.html#continuous-monitoring" class="mega-menu__link">Continuous Monitoring</a></li>
+            <li><a href="service-market-entry-strategic-intelligence.html" class="mega-menu__link">Market Entry &amp; Strategic</a></li>
+            <li><a href="service-fraud-integrity-intelligence.html" class="mega-menu__link">Fraud &amp; Integrity</a></li>
+            <li><a href="service-continuous-monitoring.html" class="mega-menu__link">Continuous Monitoring</a></li>
           </ul>
           <div class="mega-menu__cta-box">
             <a href="services.html" class="mega-menu__cta-link" style="margin-bottom: 8px;">View All Services <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -249,16 +248,16 @@
         <a href="service-corporate-counterparty-intelligence.html" class="nav-mobile__sublink">Corporate &amp; Counterparty</a>
         <a href="service-executive-vetting.html" class="nav-mobile__sublink">Executive Vetting</a>
         <a href="service-pre-investment-transaction-intelligence.html" class="nav-mobile__sublink">Pre-Investment &amp; Transaction</a>
-        <a href="services.html#reputation-digital-footprint" class="nav-mobile__sublink">Reputation &amp; Digital Footprint</a>
-        <a href="services.html#network-influence-intelligence" class="nav-mobile__sublink">Network &amp; Influence</a>
-        <a href="services.html#market-entry-strategic-intelligence" class="nav-mobile__sublink">Market Entry &amp; Strategic</a>
-        <a href="services.html#third-party-supplier-integrity" class="nav-mobile__sublink">Third-Party &amp; Supplier</a>
-        <a href="services.html#fraud-integrity-intelligence" class="nav-mobile__sublink">Fraud &amp; Integrity</a>
-        <a href="services.html#continuous-monitoring" class="nav-mobile__sublink">Continuous Monitoring</a>
+        <a href="service-reputation-digital-footprint.html" class="nav-mobile__sublink">Reputation &amp; Digital Footprint</a>
+        <a href="service-network-influence-intelligence.html" class="nav-mobile__sublink">Network &amp; Influence</a>
+        <a href="service-market-entry-strategic-intelligence.html" class="nav-mobile__sublink">Market Entry &amp; Strategic</a>
+        <a href="service-third-party-supplier-integrity.html" class="nav-mobile__sublink">Third-Party &amp; Supplier</a>
+        <a href="service-fraud-integrity-intelligence.html" class="nav-mobile__sublink">Fraud &amp; Integrity</a>
+        <a href="service-continuous-monitoring.html" class="nav-mobile__sublink">Continuous Monitoring</a>
       </div>
     </div>
     <a href="about.html" class="nav-mobile__link">About</a>
-    <a href="/canada-africa" class="nav-mobile__link">Canada &amp; Africa</a>
+    <a href="canada-africa.html" class="nav-mobile__link">Canada &amp; Africa</a>
     <a href="/sectors" class="nav-mobile__link">Sectors</a>
     <a href="/insights" class="nav-mobile__link">Insights</a>
     <div class="nav-mobile__cta"><a href="/contact" class="btn btn--gold">Request a Consultation</a></div>
@@ -340,6 +339,48 @@
       </div>
     </section>
 
+    <section class="deliverable-section">
+      <div class="deliverable-section__inner reveal">
+        <h2 class="deliverable-section__title">Deliverable</h2>
+        <p class="deliverable-section__text">An intelligence assessment covering the people, companies and relationships behind the transaction, including:</p>
+        <div class="deliverable-grid">
+          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Founders and executives</div>
+          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Beneficial owners</div>
+          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Key business partners and intermediaries</div>
+          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Political exposure and reputation</div>
+          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Corporate networks and undisclosed interests</div>
+          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Potential conflicts</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 80px 80px; background: var(--color-off-white);">
+      <div style="max-width: var(--max-width); margin: 0 auto;">
+        <span class="overline">Explore Further</span>
+        <h2 style="font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; margin-bottom: 40px;">Related Services</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <a href="service-corporate-counterparty-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
+            <span class="overline">Corporate Intelligence</span>
+            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Corporate &amp; Counterparty Intelligence</h3>
+            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Investigate the integrity, ownership and conduct of corporate counterparties before entering a business relationship.</p>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
+          </a>
+          <a href="service-african-cross-border-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
+            <span class="overline">Corporate Intelligence</span>
+            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">African Cross-Border Intelligence</h3>
+            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Investigate unfamiliar counterparties across African jurisdictions before entering a transaction or commercial relationship.</p>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
+          </a>
+          <a href="service-fraud-integrity-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
+            <span class="overline">Strategic Intelligence</span>
+            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Fraud &amp; Integrity Intelligence</h3>
+            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Investigate suspected fraud, corruption and integrity failures across business operations and partnerships.</p>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-final">
       <div class="cta-final__inner reveal">
         <h2 class="cta-final__title">Discuss Your Intelligence Requirements</h2>
@@ -357,16 +398,8 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__logo">
-            <svg class="footer__logo-symbol" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M50 8 C20 8, 2 35, 10 65" stroke="#C0392B" stroke-width="8" stroke-linecap="round" fill="none"/>
-              <path d="M50 22 C28 22, 14 42, 20 62" stroke="#1D7A47" stroke-width="7" stroke-linecap="round" fill="none"/>
-              <path d="M50 36 C36 36, 26 48, 30 60" stroke="#D4A017" stroke-width="6" stroke-linecap="round" fill="none"/>
-              <circle cx="50" cy="68" r="16" stroke="white" stroke-width="3" fill="none"/>
-              <circle cx="50" cy="68" r="6" fill="white"/>
-              <ellipse cx="50" cy="68" rx="24" ry="10" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
-              <circle cx="74" cy="68" r="2.5" fill="white"/><circle cx="26" cy="68" r="2.5" fill="white"/>
-            </svg>
-            <span class="footer__logo-name">Mbhidiya</span>
+            <img src="logo-white.png" alt="Mbhidiya Intelligence" class="footer__logo-symbol">
+              <span class="footer__logo-name">Mbhidiya</span>
           </div>
           <p class="footer__values"><strong>Discretion.</strong> <strong>Loyalty.</strong> <strong>Precision.</strong></p>
           <p class="footer__tagline">Where Intelligence Meets Action.</p>
@@ -379,12 +412,12 @@
             <a href="service-african-cross-border-intelligence.html" class="footer__link">Cross-Border Intelligence</a>
             <a href="service-pre-investment-transaction-intelligence.html" class="footer__link">Transaction Intelligence</a>
             <a href="service-executive-vetting.html" class="footer__link">Executive Vetting</a>
-            <a href="services.html#reputation-digital-footprint" class="footer__link">Reputation &amp; Digital Footprint</a>
-            <a href="services.html#network-influence-intelligence" class="footer__link">Network &amp; Influence</a>
-            <a href="services.html#market-entry-strategic-intelligence" class="footer__link">Market Entry &amp; Strategic</a>
-            <a href="services.html#third-party-supplier-integrity" class="footer__link">Third-Party &amp; Supplier</a>
-            <a href="services.html#fraud-integrity-intelligence" class="footer__link">Fraud &amp; Integrity</a>
-            <a href="services.html#continuous-monitoring" class="footer__link">Continuous Monitoring</a>
+            <a href="service-reputation-digital-footprint.html" class="footer__link">Reputation &amp; Digital Footprint</a>
+            <a href="service-network-influence-intelligence.html" class="footer__link">Network &amp; Influence</a>
+            <a href="service-market-entry-strategic-intelligence.html" class="footer__link">Market Entry &amp; Strategic</a>
+            <a href="service-third-party-supplier-integrity.html" class="footer__link">Third-Party &amp; Supplier</a>
+            <a href="service-fraud-integrity-intelligence.html" class="footer__link">Fraud &amp; Integrity</a>
+            <a href="service-continuous-monitoring.html" class="footer__link">Continuous Monitoring</a>
           </div>
         </div>
         <div>
@@ -395,7 +428,7 @@
             <a href="/sectors" class="footer__link">Sectors</a>
             <a href="/why-mbhidiya" class="footer__link">Why Mbhidiya</a>
             <a href="/insights" class="footer__link">Insights</a>
-            <a href="/canada-africa" class="footer__link">Canada &amp; Africa</a>
+            <a href="canada-africa.html" class="footer__link">Canada &amp; Africa</a>
           </div>
         </div>
         <div>

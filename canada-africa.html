@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>African Cross-Border Counterparty Intelligence | Mbhidiya Intelligence</title>
-  <meta name="description" content="Our flagship service. Before entering a transaction or commercial relationship, investigate unfamiliar counterparties across African jurisdictions.">
+  <title>Canada &amp; Africa | Mbhidiya Intelligence</title>
+  <meta name="description" content="Canada and Africa are becoming increasingly connected through trade, investment, critical minerals, infrastructure, technology and other commercial sectors.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,13 +27,16 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-    body { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--color-text-primary); background: var(--color-white); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--color-text-primary); background: var(--color-white); -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; display: block; } a { color: inherit; text-decoration: none; } ul, ol { list-style: none; }
     .overline { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-insight-gold); }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.03em; border-radius: 6px; cursor: pointer; border: none; text-decoration: none; white-space: nowrap; transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast); }
-    .btn:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 2px; } .btn:active { transform: translateY(1px); }
+    .btn:active { transform: translateY(1px); }
     .btn--gold { background: var(--color-insight-gold); color: var(--color-navy-depth); padding: 12px 28px; } .btn--gold:hover { background: var(--color-gold-hover); }
     .btn--large { padding: 18px 40px; font-size: 17px; }
+    .btn--outline { background: transparent; color: var(--color-white); border: 1.5px solid rgba(255,255,255,0.3); padding: 12px 28px; } .btn--outline:hover { border-color: var(--color-white); }
+
+    /* HEADER */
     .header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 1000; background: var(--color-navy-depth); box-shadow: var(--shadow-1); }
     .header__inner { max-width: 1360px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 80px; }
     .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
@@ -41,13 +44,13 @@
     .logo__name { font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-white); letter-spacing: -0.01em; }
     .logo__tagline { font-family: var(--font-body); font-size: 9.5px; font-weight: 500; color: var(--color-white); opacity: 0.7; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 3px; }
     .nav-desktop { display: flex; align-items: center; gap: 32px; }
-    .nav-desktop__link { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-fast); }
+    .nav-desktop__link { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; padding: 8px 0; transition: color var(--transition-fast); }
     .nav-desktop__link:hover { color: var(--color-white); }
+    .nav-desktop__link--active { color: var(--color-white); position: relative; }
+    .nav-desktop__link--active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--color-insight-gold); border-radius: 1px; }
     .nav-desktop__dropdown { position: relative; }
     .nav-desktop__dropdown-trigger { display: flex; align-items: center; gap: 5px; cursor: pointer; background: none; border: none; font-family: var(--font-body); font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); padding: 8px 0; transition: color var(--transition-fast); }
     .nav-desktop__dropdown-trigger:hover { color: var(--color-white); }
-    .nav-desktop__dropdown-trigger--active { color: var(--color-white); }
-    .nav-desktop__dropdown-trigger--active::after { content: ''; position: absolute; bottom: 0; left: 0; right: calc(100% - 60px); height: 2px; background: var(--color-insight-gold); border-radius: 1px; }
     .nav-desktop__chevron { width: 12px; height: 12px; transition: transform var(--transition-fast); }
     .nav-desktop__dropdown-trigger:hover .nav-desktop__chevron, .nav-desktop__dropdown-trigger[aria-expanded="true"] .nav-desktop__chevron { transform: rotate(180deg); }
     .mega-menu { position: absolute; top: var(--header-height); left: 0; right: 0; background: var(--color-white); box-shadow: var(--shadow-3); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); }
@@ -77,7 +80,6 @@
     .nav-mobile__link:hover { color: var(--color-insight-gold); }
     .nav-mobile__accordion { border-bottom: 1px solid rgba(255,255,255,0.08); }
     .nav-mobile__accordion-trigger { background: none; border: none; font-family: var(--font-body); font-size: 24px; font-weight: 500; color: var(--color-white); padding: 16px 0; width: 100%; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
-    .nav-mobile__accordion-trigger--active { color: var(--color-insight-gold); }
     .nav-mobile__accordion-trigger svg { transition: transform var(--transition-fast); }
     .nav-mobile__accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
     .nav-mobile__accordion-panel { max-height: 0; overflow: hidden; transition: max-height 250ms ease; }
@@ -86,44 +88,65 @@
     .nav-mobile__sublink:hover { color: var(--color-white); }
     .nav-mobile__cta { margin-top: auto; padding-top: 32px; }
     .nav-mobile__cta .btn { display: block; width: 100%; text-align: center; padding: 18px 32px; font-size: 17px; }
+
+    /* BREADCRUMB */
     .breadcrumb { font-family: var(--font-body); font-size: 13px; display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
     .breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); } .breadcrumb a:hover { color: var(--color-white); }
     .breadcrumb__sep { color: rgba(255,255,255,0.3); } .breadcrumb__current { color: rgba(255,255,255,0.85); }
+
+    /* PAGE HERO */
     .page-hero { background: linear-gradient(135deg, rgba(12,27,58,0.92) 0%, rgba(26,49,88,0.85) 100%), linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%); padding: 160px 80px 80px; position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(30,58,110,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(30,58,110,0.2) 0%, transparent 50%); pointer-events: none; }
     .page-hero__inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 1; }
     .page-hero__title { font-family: var(--font-heading); font-size: 44px; font-weight: 400; color: var(--color-white); line-height: 1.15; letter-spacing: -0.01em; margin-top: 16px; max-width: 700px; }
     .page-hero__tagline { font-family: var(--font-heading); font-size: 22px; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.5; margin-top: 16px; max-width: 650px; }
-    .page-hero__badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--color-navy-depth); background: linear-gradient(90deg, #D4A017, #E8B830); padding: 4px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-    .service-intro { padding: 80px 80px; background: var(--color-white); }
-    .service-intro__inner { max-width: var(--max-width); margin: 0 auto; }
-    .service-intro__text { font-size: 19px; line-height: 1.8; color: var(--color-text-primary); max-width: 760px; }
-    .service-intro__text p + p { margin-top: 16px; }
 
-    .questions-section { padding: 80px 80px; background: var(--color-bg-secondary); }
-    .questions-section__inner { max-width: var(--max-width); margin: 0 auto; }
-    .questions-section__title { font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-text-heading); margin-bottom: 40px; }
-    .question-card { display: flex; gap: 24px; align-items: flex-start; padding: 32px; background: var(--color-white); border-radius: 8px; box-shadow: var(--shadow-1); margin-bottom: 16px; }
-    .question-card:last-child { margin-bottom: 0; }
-    .question-card__num { width: 48px; height: 48px; border-radius: 50%; background: var(--color-navy-depth); color: var(--color-insight-gold); font-family: var(--font-heading); font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .question-card__content {}
-    .question-card__title { font-size: 20px; font-weight: 600; color: var(--color-text-heading); line-height: 1.4; }
-    .question-card__desc { font-size: 16px; line-height: 1.7; color: var(--color-text-primary); margin-top: 8px; }
+    /* CONTENT SECTIONS */
+    .content-section { padding: 80px 80px; background: var(--color-white); }
+    .content-section--alt { background: var(--color-off-white); }
+    .content-section--dark { background: var(--color-navy-depth); }
+    .content-section__inner { max-width: var(--max-width); margin: 0 auto; }
+    .content-section__text { font-size: 19px; line-height: 1.8; color: var(--color-text-primary); max-width: 760px; }
+    .content-section__text p + p { margin-top: 16px; }
+    .section-title { font-family: var(--font-heading); font-size: 32px; font-weight: 400; color: var(--color-text-heading); line-height: 1.2; margin-bottom: 24px; }
+    .section-title--light { color: var(--color-white); }
 
-    .deliverable-section { padding: 80px 80px; background: var(--color-navy-depth); }
-    .deliverable-section__inner { max-width: var(--max-width); margin: 0 auto; }
-    .deliverable-section__title { font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-white); margin-bottom: 24px; }
-    .deliverable-section__text { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
-    .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .deliverable-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 16px 20px; font-size: 15px; font-weight: 500; color: var(--color-white); display: flex; align-items: center; gap: 10px; }
-    .deliverable-item__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-insight-gold); flex-shrink: 0; }
+    /* WHO WE HELP */
+    .help-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+    .help-card { background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); }
+    .help-card__title { font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-bottom: 12px; }
+    .help-card__desc { font-size: 16px; line-height: 1.7; color: var(--color-text-primary); }
 
+    /* SERVICE COLUMNS */
+    .service-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+    .service-col__title { font-family: var(--font-heading); font-size: 24px; font-weight: 400; color: var(--color-white); margin-bottom: 20px; }
+    .service-col__list { display: flex; flex-direction: column; gap: 12px; }
+    .service-col__item { display: flex; align-items: center; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.85); }
+    .service-col__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-insight-gold); flex-shrink: 0; }
+
+    /* REGIONS */
+    .regions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px; }
+    .region-card { background: var(--color-white); border-radius: 8px; padding: 28px; box-shadow: var(--shadow-1); }
+    .region-card__title { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-text-heading); margin-bottom: 16px; }
+    .region-card__list { display: flex; flex-direction: column; gap: 8px; }
+    .region-card__item { font-size: 15px; color: var(--color-text-primary); display: flex; align-items: center; gap: 8px; }
+    .region-card__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--color-insight-gold); flex-shrink: 0; }
+    .region-note { font-size: 15px; color: var(--color-mid-gray); margin-top: 32px; font-style: italic; }
+
+    /* AFCFTA */
+    .afcfta-text { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.8); max-width: 760px; }
+    .afcfta-text p + p { margin-top: 16px; }
+    .afcfta-highlight { font-size: 19px; font-weight: 600; color: var(--color-white); margin-top: 24px; max-width: 760px; line-height: 1.6; }
+
+    /* CTA */
     .cta-final { padding: 96px 80px; background: linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%); text-align: center; position: relative; overflow: hidden; }
     .cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(212,160,23,0.06) 0%, transparent 60%); pointer-events: none; }
     .cta-final__inner { position: relative; z-index: 1; }
     .cta-final__title { font-family: var(--font-heading); font-size: 44px; font-weight: 400; color: var(--color-white); line-height: 1.15; max-width: 600px; margin: 0 auto; }
     .cta-final__text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 500px; margin: 20px auto 0; }
     .cta-final__btn { margin-top: 40px; }
+
+    /* FOOTER */
     .footer { background: var(--color-near-black); padding: 80px 80px 32px; }
     .footer__inner { max-width: var(--max-width); margin: 0 auto; }
     .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 48px; }
@@ -144,25 +167,28 @@
     .footer__legal { display: flex; gap: 24px; }
     .footer__legal a { font-size: 13px; color: var(--color-mid-gray); transition: color var(--transition-fast); }
     .footer__legal a:hover { color: var(--color-white); }
+
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
     .reveal--visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 1024px) {
       .header__inner { padding: 0 48px; }
-      .page-hero, .service-intro, .questions-section, .deliverable-section, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
+      .page-hero, .content-section, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
       .mega-menu__inner { padding: 32px 48px; gap: 24px; }
       .page-hero__title { font-size: 38px; }
+      .regions-grid { grid-template-columns: repeat(2, 1fr); }
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
     @media (max-width: 900px) {
       .nav-desktop { display: none; } .nav-toggle { display: flex; flex-direction: column; } .nav-mobile { display: flex; }
       .header__inner { padding: 0 20px; }
-      .page-hero, .service-intro, .questions-section, .deliverable-section, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
+      .page-hero, .content-section, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
       .page-hero { padding-top: 120px; padding-bottom: 60px; }
       .page-hero__title { font-size: 32px; }
-      .service-intro, .questions-section, .deliverable-section { padding-top: 56px; padding-bottom: 56px; }
-      .deliverable-grid { grid-template-columns: 1fr 1fr; }
-      .question-card { flex-direction: column; gap: 16px; padding: 24px; }
+      .content-section { padding-top: 56px; padding-bottom: 56px; }
+      .help-grid { grid-template-columns: 1fr; }
+      .service-columns { grid-template-columns: 1fr; gap: 32px; }
+      .regions-grid { grid-template-columns: 1fr; }
       .cta-final__title { font-size: 32px; }
       .footer__grid { grid-template-columns: 1fr; gap: 32px; }
       .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -171,7 +197,6 @@
     @media (max-width: 480px) {
       .logo__name { font-size: 18px; } .logo__tagline { font-size: 8px; } .logo__symbol { height: 36px; }
       .page-hero__title { font-size: 28px; }
-      .deliverable-grid { grid-template-columns: 1fr; }
       .cta-final__title { font-size: 28px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -191,12 +216,12 @@
       </a>
       <nav class="nav-desktop" aria-label="Main navigation">
         <div class="nav-desktop__dropdown">
-          <button class="nav-desktop__dropdown-trigger nav-desktop__dropdown-trigger--active" aria-expanded="false" aria-controls="mega-menu" id="services-trigger">
+          <button class="nav-desktop__dropdown-trigger" aria-expanded="false" aria-controls="mega-menu" id="services-trigger">
             Services <svg class="nav-desktop__chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
         <a href="about.html" class="nav-desktop__link">About</a>
-        <a href="canada-africa.html" class="nav-desktop__link">Canada &amp; Africa</a>
+        <a href="canada-africa.html" class="nav-desktop__link nav-desktop__link--active">Canada &amp; Africa</a>
         <a href="/sectors" class="nav-desktop__link">Sectors</a>
         <a href="/insights" class="nav-desktop__link">Insights</a>
         <a href="/contact" class="btn btn--gold">Request a Consultation</a>
@@ -245,7 +270,7 @@
 
   <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <div class="nav-mobile__accordion">
-      <button class="nav-mobile__accordion-trigger nav-mobile__accordion-trigger--active" aria-expanded="false" aria-controls="mobile-services">
+      <button class="nav-mobile__accordion-trigger" aria-expanded="false" aria-controls="mobile-services">
         Services <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8L10 13L15 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="nav-mobile__accordion-panel" id="mobile-services">
@@ -263,7 +288,7 @@
       </div>
     </div>
     <a href="about.html" class="nav-mobile__link">About</a>
-    <a href="canada-africa.html" class="nav-mobile__link">Canada &amp; Africa</a>
+    <a href="canada-africa.html" class="nav-mobile__link" style="color: var(--color-insight-gold);">Canada &amp; Africa</a>
     <a href="/sectors" class="nav-mobile__link">Sectors</a>
     <a href="/insights" class="nav-mobile__link">Insights</a>
     <div class="nav-mobile__cta"><a href="/contact" class="btn btn--gold">Request a Consultation</a></div>
@@ -271,121 +296,179 @@
 
   <main>
 
+    <!-- HERO -->
     <section class="page-hero">
       <div class="page-hero__inner">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span class="breadcrumb__sep">/</span>
-          <a href="services.html">Services</a>
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current">African Cross-Border Intelligence</span>
+          <span class="breadcrumb__current">Canada &amp; Africa</span>
         </nav>
-        <span class="page-hero__badge">Flagship Service</span>
-        <span class="overline">Service 03</span>
-        <h1 class="page-hero__title">African Cross-Border Counterparty Intelligence</h1>
-        <p class="page-hero__tagline">Before You Enter the Relationship, Understand the Relationship.</p>
+        <span class="overline">One Intelligence Firm. Connected Markets.</span>
+        <h1 class="page-hero__title">Connecting Canadian and African Commercial Intelligence</h1>
+        <p class="page-hero__tagline">Canada and Africa are becoming increasingly connected through trade, investment, critical minerals, infrastructure, technology and other commercial sectors.</p>
       </div>
     </section>
 
-    <section class="service-intro">
-      <div class="service-intro__inner reveal">
-        <div class="service-intro__text">
-          <p>This is one of our flagship services.</p>
-          <p>The expansion of trade, investment and commercial activity across African markets creates new opportunities.</p>
-          <p>It also creates new information gaps.</p>
-          <p>Before entering a transaction or commercial relationship, Mbhidiya Intelligence helps clients investigate unfamiliar counterparties.</p>
+    <!-- INTRO -->
+    <section class="content-section">
+      <div class="content-section__inner reveal">
+        <div class="content-section__text">
+          <p>Canada's 2025 Africa Strategy explicitly aims to strengthen economic cooperation and support Canadian companies pursuing opportunities across African markets. The strategy also includes continued support for AfCFTA implementation and new mechanisms intended to strengthen Canada-Africa commercial engagement. (Global Affairs Canada)</p>
+          <p>For organisations, however, opportunity creates a practical challenge.</p>
+          <p>How do you assess a company, executive, partner or intermediary in a market where your existing information sources may be limited?</p>
+          <p><strong style="color: var(--color-text-heading);">That is where Mbhidiya Intelligence operates.</strong></p>
         </div>
       </div>
     </section>
 
-    <section class="questions-section">
-      <div class="questions-section__inner">
-        <h2 class="questions-section__title reveal">We Answer Five Critical Questions</h2>
-
-        <div class="question-card reveal">
-          <div class="question-card__num">1</div>
-          <div class="question-card__content">
-            <div class="question-card__title">Who are we dealing with?</div>
-            <p class="question-card__desc">We examine the people and organisations involved.</p>
+    <!-- WHO WE HELP -->
+    <section class="content-section content-section--alt">
+      <div class="content-section__inner">
+        <span class="overline reveal">Who We Help</span>
+        <h2 class="section-title reveal" style="margin-top: 8px;">We Help</h2>
+        <div class="help-grid">
+          <div class="help-card reveal">
+            <h3 class="help-card__title">Canadian Organisations Entering African Markets</h3>
+            <p class="help-card__desc">Understand potential partners, counterparties and operating environments.</p>
           </div>
-        </div>
-
-        <div class="question-card reveal">
-          <div class="question-card__num">2</div>
-          <div class="question-card__content">
-            <div class="question-card__title">Who owns or controls the entity?</div>
-            <p class="question-card__desc">We investigate ownership, influence and relevant relationships.</p>
+          <div class="help-card reveal">
+            <h3 class="help-card__title">African Organisations Expanding Across Borders</h3>
+            <p class="help-card__desc">Conduct intelligence and due diligence before entering unfamiliar commercial relationships.</p>
           </div>
-        </div>
-
-        <div class="question-card reveal">
-          <div class="question-card__num">3</div>
-          <div class="question-card__content">
-            <div class="question-card__title">Who are they connected to?</div>
-            <p class="question-card__desc">We examine relevant corporate, commercial and other relationships.</p>
+          <div class="help-card reveal">
+            <h3 class="help-card__title">Investors Evaluating Cross-Border Opportunities</h3>
+            <p class="help-card__desc">Investigate the people, companies and relationships behind potential transactions.</p>
           </div>
-        </div>
-
-        <div class="question-card reveal">
-          <div class="question-card__num">4</div>
-          <div class="question-card__content">
-            <div class="question-card__title">What information may be missing?</div>
-            <p class="question-card__desc">We identify inconsistencies, gaps and areas requiring further verification.</p>
-          </div>
-        </div>
-
-        <div class="question-card reveal">
-          <div class="question-card__num">5</div>
-          <div class="question-card__content">
-            <div class="question-card__title">What could become our problem?</div>
-            <p class="question-card__desc">We assess relevant integrity, reputational, regulatory, political and relationship risks.</p>
+          <div class="help-card reveal">
+            <h3 class="help-card__title">Professional Advisers</h3>
+            <p class="help-card__desc">Add specialised intelligence capability to complex transactions and client matters.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="deliverable-section">
-      <div class="deliverable-section__inner reveal">
-        <h2 class="deliverable-section__title">Deliverable</h2>
-        <p class="deliverable-section__text">Clients receive an intelligence assessment designed to support a decision to:</p>
-        <div class="deliverable-grid">
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Proceed</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Pause</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Conduct further due diligence</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Seek additional verification</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Renegotiate</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Decline the relationship</div>
+    <!-- SERVICES BY GEOGRAPHY -->
+    <section class="content-section content-section--dark">
+      <div class="content-section__inner">
+        <span class="overline reveal">Our Coverage</span>
+        <h2 class="section-title section-title--light reveal" style="margin-top: 8px;">What We Do</h2>
+        <div class="service-columns reveal">
+          <div>
+            <h3 class="service-col__title">Canada &amp; Africa</h3>
+            <div class="service-col__list">
+              <div class="service-col__item"><span class="service-col__dot"></span>Executive and leadership intelligence</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Corporate and third-party due diligence</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Reputation and digital footprint intelligence</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Africa market-entry intelligence</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="service-col__title">Africa</h3>
+            <div class="service-col__list">
+              <div class="service-col__item"><span class="service-col__dot"></span>Fraud and integrity inquiries</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Vendor and partner intelligence</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Cross-border intelligence</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Local companies and business partners</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Agents and intermediaries</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Beneficial ownership</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Political exposure</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Reputation and networks</div>
+              <div class="service-col__item"><span class="service-col__dot"></span>Market-entry risks</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section style="padding: 80px 80px; background: var(--color-off-white);">
-      <div style="max-width: var(--max-width); margin: 0 auto;">
-        <span class="overline">Explore Further</span>
-        <h2 style="font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; margin-bottom: 40px;">Related Services</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-          <a href="service-corporate-counterparty-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
-            <span class="overline">Corporate Intelligence</span>
-            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Corporate &amp; Counterparty Intelligence</h3>
-            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Investigate the integrity, ownership and conduct of corporate counterparties before entering a business relationship.</p>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
-          </a>
-          <a href="service-pre-investment-transaction-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
-            <span class="overline">Corporate Intelligence</span>
-            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Pre-Investment &amp; Transaction Intelligence</h3>
-            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Intelligence-led assessments to support investment decisions, acquisitions and high-value transactions.</p>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
-          </a>
-          <a href="service-market-entry-strategic-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
-            <span class="overline">Strategic Intelligence</span>
-            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Market Entry &amp; Strategic Intelligence</h3>
-            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Strategic intelligence to support market entry decisions, expansion planning and opportunity assessment across African jurisdictions.</p>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
-          </a>
+    <!-- AFCFTA -->
+    <section class="content-section content-section--dark" style="padding-top: 0;">
+      <div class="content-section__inner reveal">
+        <span class="overline">Intelligence for an Increasingly Connected Africa</span>
+        <h2 class="section-title section-title--light" style="margin-top: 8px;">Cross-Border Opportunity Requires Cross-Border Intelligence</h2>
+        <div class="afcfta-text">
+          <p>The African Continental Free Trade Area is intended to deepen intra-African trade, investment and regional value chains. Its Digital Trade Protocol also aims to create more harmonised rules and a more predictable environment for digital trade across participating African markets.</p>
+          <p>As organisations expand across borders, they increasingly need to make decisions about people and companies they have never worked with before.</p>
+          <p>A South African company may need a partner in Kenya. A Canadian investor may evaluate an opportunity in C&ocirc;te d'Ivoire. A financial institution may onboard a company with operations across several jurisdictions. An investor may consider a company whose ownership, relationships and influence extend beyond one country.</p>
+          <p>This creates an intelligence problem.</p>
         </div>
+        <p class="afcfta-highlight">The easier it becomes to connect markets, the more important it becomes to understand who operates within them.</p>
+        <p style="font-size: 17px; color: rgba(255,255,255,0.8); margin-top: 16px;">Mbhidiya Intelligence helps clients reduce this information gap.</p>
       </div>
     </section>
 
+    <!-- PRIORITY MARKETS -->
+    <section class="content-section content-section--alt">
+      <div class="content-section__inner">
+        <span class="overline reveal">Our Priority Markets</span>
+        <h2 class="section-title reveal" style="margin-top: 8px;">Geographic Coverage</h2>
+        <p class="reveal" style="font-size: 17px; line-height: 1.7; color: var(--color-text-primary); max-width: 760px; margin-bottom: 8px;">We do not claim that every African country presents the same commercial opportunity or that intelligence can be delivered identically across the continent.</p>
+        <p class="reveal" style="font-size: 17px; line-height: 1.7; color: var(--color-text-primary); max-width: 760px;">Our approach follows commercial corridors, client needs and strategic priorities.</p>
+
+        <div class="regions-grid">
+          <div class="region-card reveal">
+            <h3 class="region-card__title">Southern Africa</h3>
+            <div class="region-card__list">
+              <div class="region-card__item"><span class="region-card__dot"></span>South Africa</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Lesotho</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Botswana</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Namibia</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Zambia</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Zimbabwe</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Mozambique</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Eswatini</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Angola</div>
+            </div>
+          </div>
+          <div class="region-card reveal">
+            <h3 class="region-card__title">Eastern Africa</h3>
+            <div class="region-card__list">
+              <div class="region-card__item"><span class="region-card__dot"></span>Kenya</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Tanzania</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Uganda</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Rwanda</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Ethiopia</div>
+            </div>
+          </div>
+          <div class="region-card reveal">
+            <h3 class="region-card__title">West Africa</h3>
+            <div class="region-card__list">
+              <div class="region-card__item"><span class="region-card__dot"></span>Nigeria</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Ghana</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>C&ocirc;te d'Ivoire</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Senegal</div>
+            </div>
+          </div>
+          <div class="region-card reveal">
+            <h3 class="region-card__title">Central Africa</h3>
+            <div class="region-card__list">
+              <div class="region-card__item"><span class="region-card__dot"></span>Democratic Republic of the Congo</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Republic of the Congo</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Cameroon</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Gabon</div>
+            </div>
+          </div>
+          <div class="region-card reveal">
+            <h3 class="region-card__title">Strategic North &amp; Continental Markets</h3>
+            <div class="region-card__list">
+              <div class="region-card__item"><span class="region-card__dot"></span>Egypt</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Morocco</div>
+              <div class="region-card__item"><span class="region-card__dot"></span>Mauritius</div>
+            </div>
+          </div>
+          <div class="region-card reveal">
+            <h3 class="region-card__title">Canada</h3>
+            <div class="region-card__list">
+              <div class="region-card__item"><span class="region-card__dot"></span>National coverage</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="region-note reveal">Our geographic coverage expands according to client mandates, local research capability and trusted professional networks.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-final">
       <div class="cta-final__inner reveal">
         <h2 class="cta-final__title">Discuss Your Intelligence Requirements</h2>
