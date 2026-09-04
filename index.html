@@ -761,8 +761,31 @@
         max-width: 600px;
       }
 
+      .hero__tagline {
+        font-family: var(--font-heading);
+        font-size: 17px;
+        font-weight: 400;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 20px;
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero__tagline::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--color-insight-gold);
+        opacity: 0.6;
+        flex-shrink: 0;
+      }
+
       .hero__actions {
-        margin-top: 40px;
+        margin-top: 36px;
         display: flex;
         gap: var(--space-md);
         flex-wrap: wrap;
@@ -1983,6 +2006,7 @@
             and markets behind critical business decisions across Canada
             and&nbsp;Africa.
           </p>
+          <p class="hero__tagline">Where Intelligence Meets Action.</p>
           <div class="hero__actions">
             <a href="/contact" class="btn btn--gold"
               >Request an Intelligence Consultation</a
