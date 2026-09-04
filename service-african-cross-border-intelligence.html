@@ -146,10 +146,19 @@
     .footer__legal a:hover { color: var(--color-white); }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
     .reveal--visible { opacity: 1; transform: translateY(0); }
+    .related-services { padding: 80px 80px; background: var(--color-off-white); }
+    .related-services__inner { max-width: var(--max-width); margin: 0 auto; }
+    .related-services__title { font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; margin-bottom: 40px; }
+    .related-services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-services__card { background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); transition: box-shadow var(--transition-medium), transform var(--transition-medium); text-decoration: none; display: block; }
+    .related-services__card:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
+    .related-services__card-title { font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3; }
+    .related-services__card-text { font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px; }
+    .related-services__card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px; }
 
     @media (max-width: 1024px) {
       .header__inner { padding: 0 48px; }
-      .page-hero, .service-intro, .questions-section, .deliverable-section, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
+      .page-hero, .service-intro, .questions-section, .deliverable-section, .related-services, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
       .mega-menu__inner { padding: 32px 48px; gap: 24px; }
       .page-hero__title { font-size: 38px; }
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -157,11 +166,12 @@
     @media (max-width: 900px) {
       .nav-desktop { display: none; } .nav-toggle { display: flex; flex-direction: column; } .nav-mobile { display: flex; }
       .header__inner { padding: 0 20px; }
-      .page-hero, .service-intro, .questions-section, .deliverable-section, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
+      .page-hero, .service-intro, .questions-section, .deliverable-section, .related-services, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
       .page-hero { padding-top: 120px; padding-bottom: 60px; }
       .page-hero__title { font-size: 32px; }
-      .service-intro, .questions-section, .deliverable-section { padding-top: 56px; padding-bottom: 56px; }
+      .service-intro, .questions-section, .deliverable-section, .related-services { padding-top: 56px; padding-bottom: 56px; }
       .deliverable-grid { grid-template-columns: 1fr 1fr; }
+      .related-services__grid { grid-template-columns: 1fr; }
       .question-card { flex-direction: column; gap: 16px; padding: 24px; }
       .cta-final__title { font-size: 32px; }
       .footer__grid { grid-template-columns: 1fr; gap: 32px; }
@@ -359,28 +369,28 @@
       </div>
     </section>
 
-    <section style="padding: 80px 80px; background: var(--color-off-white);">
-      <div style="max-width: var(--max-width); margin: 0 auto;">
+    <section class="related-services">
+      <div class="related-services__inner">
         <span class="overline">Explore Further</span>
-        <h2 style="font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; margin-bottom: 40px;">Related Services</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-          <a href="service-corporate-counterparty-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
+        <h2 class="related-services__title">Related Services</h2>
+        <div class="related-services__grid">
+          <a href="service-corporate-counterparty-intelligence.html" class="related-services__card">
             <span class="overline">Corporate Intelligence</span>
-            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Corporate &amp; Counterparty Intelligence</h3>
-            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Investigate the integrity, ownership and conduct of corporate counterparties before entering a business relationship.</p>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
+            <h3 class="related-services__card-title">Corporate &amp; Counterparty Intelligence</h3>
+            <p class="related-services__card-text">Investigate the integrity, ownership and conduct of corporate counterparties before entering a business relationship.</p>
+            <span class="related-services__card-link">Learn More &rarr;</span>
           </a>
-          <a href="service-pre-investment-transaction-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
+          <a href="service-pre-investment-transaction-intelligence.html" class="related-services__card">
             <span class="overline">Corporate Intelligence</span>
-            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Pre-Investment &amp; Transaction Intelligence</h3>
-            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Intelligence-led assessments to support investment decisions, acquisitions and high-value transactions.</p>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
+            <h3 class="related-services__card-title">Pre-Investment &amp; Transaction Intelligence</h3>
+            <p class="related-services__card-text">Intelligence-led assessments to support investment decisions, acquisitions and high-value transactions.</p>
+            <span class="related-services__card-link">Learn More &rarr;</span>
           </a>
-          <a href="service-market-entry-strategic-intelligence.html" style="background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); text-decoration: none; display: block;">
+          <a href="service-market-entry-strategic-intelligence.html" class="related-services__card">
             <span class="overline">Strategic Intelligence</span>
-            <h3 style="font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3;">Market Entry &amp; Strategic Intelligence</h3>
-            <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px;">Strategic intelligence to support market entry decisions, expansion planning and opportunity assessment across African jurisdictions.</p>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px;">Learn More &rarr;</span>
+            <h3 class="related-services__card-title">Market Entry &amp; Strategic Intelligence</h3>
+            <p class="related-services__card-text">Strategic intelligence to support market entry decisions, expansion planning and opportunity assessment across African jurisdictions.</p>
+            <span class="related-services__card-link">Learn More &rarr;</span>
           </a>
         </div>
       </div>
