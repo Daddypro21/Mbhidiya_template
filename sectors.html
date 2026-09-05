@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Third-Party &amp; Supplier Integrity Intelligence | Mbhidiya Intelligence</title>
-  <meta name="description" content="Understand who your suppliers, agents, consultants, distributors and external partners are before they become part of your commercial ecosystem.">
+  <title>Sectors | Mbhidiya Intelligence</title>
+  <meta name="description" content="Intelligence services for private equity, corporate M&A, law firms, financial institutions, mining, infrastructure, energy and technology sectors.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,8 @@
       --color-near-black: #0A0F1A;
       --color-text-primary: var(--color-dark-gray);
       --color-text-heading: var(--color-near-black);
+      --color-bg-primary: var(--color-white);
+      --color-bg-secondary: var(--color-off-white);
       --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
       --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
       --max-width: 1200px;
@@ -44,7 +46,7 @@
       font-family: var(--font-body);
       font-size: 17px; line-height: 1.7;
       color: var(--color-text-primary);
-      background: var(--color-white);
+      background: var(--color-bg-primary);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -52,46 +54,25 @@
     a { color: inherit; text-decoration: none; }
     ul, ol { list-style: none; }
 
-    .overline {
-      font-family: var(--font-body); font-size: 12px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--color-insight-gold);
-    }
-    .section-title {
-      font-family: var(--font-heading); font-size: 36px; font-weight: 400;
-      line-height: 1.2; letter-spacing: -0.01em;
-      color: var(--color-text-heading); margin-top: 12px;
-    }
+    .overline { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-insight-gold); }
+    .section-title { font-family: var(--font-heading); font-size: 36px; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; color: var(--color-text-heading); margin-top: 12px; }
     .section-title--light { color: var(--color-white); }
 
     /* BUTTONS */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      font-family: var(--font-body); font-size: 15px; font-weight: 600;
-      letter-spacing: 0.03em; border-radius: 6px; cursor: pointer; border: none;
-      text-decoration: none; white-space: nowrap;
-      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.03em; border-radius: 6px; cursor: pointer; border: none; text-decoration: none; white-space: nowrap; transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast); }
     .btn:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 2px; }
     .btn:active { transform: translateY(1px); }
     .btn--gold { background: var(--color-insight-gold); color: var(--color-navy-depth); padding: 12px 28px; }
     .btn--gold:hover { background: var(--color-gold-hover); }
-    .btn--gold:focus-visible { outline-color: var(--color-navy-depth); }
     .btn--outline { background: transparent; color: var(--color-navy-depth); padding: 12px 28px; border: 1.5px solid var(--color-navy-depth); }
     .btn--outline:hover { background: var(--color-navy-depth); color: var(--color-white); }
+    .btn--outline-white { background: transparent; color: var(--color-white); padding: 12px 28px; border: 1.5px solid var(--color-white); }
+    .btn--outline-white:hover { background: var(--color-white); color: var(--color-navy-depth); }
     .btn--large { padding: 18px 40px; font-size: 17px; }
 
     /* HEADER */
-    .header {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: var(--header-height); z-index: 2100;
-      background: var(--color-navy-depth); box-shadow: var(--shadow-1);
-    }
-    .header__inner {
-      max-width: 1360px; margin: 0 auto; height: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 80px;
-    }
+    .header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 2100; background: var(--color-navy-depth); box-shadow: var(--shadow-1); transition: background var(--transition-medium), box-shadow var(--transition-medium); }
+    .header__inner { max-width: 1360px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 80px; }
     .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
     .logo__symbol { height: 44px; width: auto; }
     .logo__text { display: flex; flex-direction: column; line-height: 1; }
@@ -99,44 +80,21 @@
     .logo__tagline { font-family: var(--font-body); font-size: 9.5px; font-weight: 500; color: var(--color-white); opacity: 0.7; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 3px; }
 
     .nav-desktop { display: flex; align-items: center; gap: 32px; }
-    .nav-desktop__link {
-      font-family: var(--font-body); font-size: 15px; font-weight: 500;
-      color: rgba(255,255,255,0.8); text-decoration: none; position: relative;
-      padding: 8px 0; transition: color var(--transition-fast);
-    }
+    .nav-desktop__link { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-fast); }
     .nav-desktop__link:hover { color: var(--color-white); }
     .nav-desktop__link--active { color: var(--color-white); }
-    .nav-desktop__link--active::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px; background: var(--color-insight-gold); border-radius: 1px;
-    }
+    .nav-desktop__link--active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--color-insight-gold); border-radius: 1px; }
     .nav-desktop__link:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 4px; border-radius: 2px; }
-
     .nav-desktop__dropdown { position: relative; }
-    .nav-desktop__dropdown-trigger {
-      display: flex; align-items: center; gap: 5px; cursor: pointer;
-      background: none; border: none; font-family: var(--font-body);
-      font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8);
-      padding: 8px 0; transition: color var(--transition-fast);
-    }
+    .nav-desktop__dropdown-trigger { display: flex; align-items: center; gap: 5px; cursor: pointer; background: none; border: none; font-family: var(--font-body); font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8); padding: 8px 0; transition: color var(--transition-fast); }
     .nav-desktop__dropdown-trigger:hover { color: var(--color-white); }
-    .nav-desktop__dropdown-trigger--active { color: var(--color-white); }
-    .nav-desktop__dropdown-trigger--active::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: calc(100% - 60px);
-      height: 2px; background: var(--color-insight-gold); border-radius: 1px;
-    }
     .nav-desktop__dropdown-trigger:focus-visible { outline: 2px solid var(--color-insight-gold); outline-offset: 4px; border-radius: 2px; }
     .nav-desktop__chevron { width: 12px; height: 12px; transition: transform var(--transition-fast); }
     .nav-desktop__dropdown-trigger:hover .nav-desktop__chevron,
     .nav-desktop__dropdown-trigger[aria-expanded="true"] .nav-desktop__chevron { transform: rotate(180deg); }
 
     /* Mega Menu */
-    .mega-menu {
-      position: absolute; top: var(--header-height); left: 0; right: 0;
-      background: var(--color-white); box-shadow: var(--shadow-3);
-      opacity: 0; visibility: hidden; transform: translateY(-8px);
-      transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
-    }
+    .mega-menu { position: absolute; top: var(--header-height); left: 0; right: 0; background: var(--color-white); box-shadow: var(--shadow-3); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); }
     .mega-menu--open { opacity: 1; visibility: visible; transform: translateY(0); }
     .mega-menu__inner { max-width: var(--max-width); margin: 0 auto; padding: 40px 80px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
     .mega-menu__col-title { font-size: 11px; font-weight: 600; color: var(--color-mid-gray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
@@ -159,25 +117,16 @@
     .nav-toggle--open .nav-toggle__bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .nav-toggle--open .nav-toggle__bar:nth-child(2) { opacity: 0; }
     .nav-toggle--open .nav-toggle__bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    .nav-toggle--open {
-      background: rgba(212, 160, 23, 0.15);
-      border-radius: 50%;
-    }
-
-    .nav-toggle--open .nav-toggle__bar {
-      background: var(--color-insight-gold);
-    }
+    .nav-toggle--open { background: rgba(212, 160, 23, 0.15); border-radius: 50%; }
+    .nav-toggle--open .nav-toggle__bar { background: var(--color-insight-gold); }
 
     /* Mobile Nav */
     .nav-mobile { display: none; position: fixed; inset: 0; background: var(--color-navy-depth); z-index: 2000; flex-direction: column; padding: 100px 32px 40px; overflow-y: auto; transform: translateX(100%); transition: transform 300ms ease; }
     .nav-mobile--open { transform: translateX(0); }
     .nav-mobile__link { font-size: 24px; font-weight: 500; color: var(--color-white); padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: block; transition: color var(--transition-fast); }
     .nav-mobile__link:hover { color: var(--color-insight-gold); }
-    .nav-mobile__link--active { color: var(--color-insight-gold); }
     .nav-mobile__accordion { border-bottom: 1px solid rgba(255,255,255,0.08); }
     .nav-mobile__accordion-trigger { background: none; border: none; font-family: var(--font-body); font-size: 24px; font-weight: 500; color: var(--color-white); padding: 16px 0; width: 100%; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
-    .nav-mobile__accordion-trigger--active { color: var(--color-insight-gold); }
     .nav-mobile__accordion-trigger svg { transition: transform var(--transition-fast); }
     .nav-mobile__accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
     .nav-mobile__accordion-panel { max-height: 0; overflow: hidden; transition: max-height 250ms ease; }
@@ -188,7 +137,7 @@
     .nav-mobile__cta .btn { display: block; width: 100%; text-align: center; padding: 18px 32px; font-size: 17px; }
 
     /* BREADCRUMB */
-    .breadcrumb { font-family: var(--font-body); font-size: 13px; display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+    .breadcrumb { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--color-mid-gray); display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
     .breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); }
     .breadcrumb a:hover { color: var(--color-white); }
     .breadcrumb__sep { color: rgba(255,255,255,0.3); }
@@ -201,100 +150,170 @@
       padding: 160px 80px 80px;
       position: relative; overflow: hidden;
     }
-    .page-hero::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 20% 80%, rgba(30,58,110,0.3) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(30,58,110,0.2) 0%, transparent 50%);
-      pointer-events: none;
-    }
+    .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(30,58,110,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(30,58,110,0.2) 0%, transparent 50%); pointer-events: none; }
     .page-hero__inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 1; }
-    .page-hero__title {
-      font-family: var(--font-heading); font-size: 44px; font-weight: 400;
-      color: var(--color-white); line-height: 1.15; letter-spacing: -0.01em;
-      margin-top: 16px; max-width: 700px;
-    }
-    .page-hero__tagline {
-      font-family: var(--font-heading); font-size: 22px; font-weight: 400;
-      font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.5;
-      margin-top: 20px; max-width: 650px;
-    }
+    .page-hero__title { font-family: var(--font-heading); font-size: 44px; font-weight: 400; color: var(--color-white); line-height: 1.15; letter-spacing: -0.01em; margin-top: 16px; max-width: 750px; }
+    .page-hero__subtitle { font-family: var(--font-body); font-size: 20px; font-weight: 400; color: rgba(255,255,255,0.9); line-height: 1.6; margin-top: 24px; max-width: 650px; }
 
-    /* SERVICE DETAIL CONTENT */
-    .service-content {
+    /* SECTORS GRID */
+    .sectors {
       padding: 96px 80px;
+      background: var(--color-bg-primary);
     }
-    .service-content__inner {
+    .sectors__inner {
       max-width: var(--max-width);
       margin: 0 auto;
     }
-    .service-content__intro {
-      max-width: 760px;
-      margin-bottom: 64px;
+    .sectors__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px;
     }
-    .service-content__intro p {
-      font-size: 19px;
-      line-height: 1.7;
-      color: var(--color-text-primary);
-    }
-    .service-content__intro p + p {
-      margin-top: 16px;
-    }
-    .service-content__grid {
+    .sectors__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-    .service-content__block {}
-    .service-content__block-title {
-      font-family: var(--font-heading);
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--color-text-heading);
-      margin-bottom: 24px;
-      line-height: 1.3;
-    }
-    .service-content__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .service-content__tag {
-      display: inline-block;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--color-dark-gray);
-      background: var(--color-off-white);
-      border: 1px solid var(--color-light-gray);
-      padding: 8px 16px;
-      border-radius: 6px;
-      transition: border-color var(--transition-fast), background var(--transition-fast);
-    }
-    .service-content__tag:hover {
-      border-color: rgba(30,58,110,0.3);
-      background: var(--color-white);
-    }
-    .service-back {
-      margin-top: 48px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
     }
 
-    /* DELIVERABLE */
-    .deliverable-section { padding: 80px 80px; background: var(--color-navy-depth); }
-    .deliverable-section__inner { max-width: var(--max-width); margin: 0 auto; }
-    .deliverable-section__title { font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-white); margin-bottom: 24px; }
-    .deliverable-section__text { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
-    .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .deliverable-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 16px 20px; font-size: 15px; font-weight: 500; color: var(--color-white); display: flex; align-items: center; gap: 10px; }
-    .deliverable-item__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-insight-gold); flex-shrink: 0; }
-    /* CTA FINAL */
-    .cta-final {
-      padding: 96px 80px;
-      background: linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%);
-      text-align: center; position: relative; overflow: hidden;
+    .sector-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-light-gray);
+      border-radius: 12px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow-1);
+      transition: box-shadow var(--transition-medium), transform var(--transition-medium);
+      display: flex;
+      flex-direction: column;
     }
+    .sector-card:hover {
+      box-shadow: var(--shadow-2);
+      transform: translateY(-4px);
+    }
+    .sector-card__icon {
+      width: 56px; height: 56px;
+      border-radius: 12px;
+      background: rgba(212,160,23,0.08);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      color: var(--color-insight-gold);
+    }
+    .sector-card__title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--color-text-heading);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .sector-card__text {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--color-text-primary);
+      margin-bottom: 20px;
+    }
+    .sector-card__list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .sector-card__list li {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--color-dark-gray);
+      padding-left: 20px;
+      position: relative;
+    }
+    .sector-card__list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-insight-gold);
+    }
+    .sector-card__note {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--color-mid-gray);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* FEATURED SECTOR (Mining - full width) */
+    .sector-featured {
+      padding: 96px 80px;
+      background: var(--color-navy-depth);
+      position: relative;
+      overflow: hidden;
+    }
+    .sector-featured::before {
+      content: '';
+      position: absolute; inset: 0;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(30deg, var(--color-intelligence-blue) 1px, transparent 1px),
+        linear-gradient(150deg, var(--color-intelligence-blue) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .sector-featured__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .sector-featured__title {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--color-white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .sector-featured__text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+    }
+    .sector-featured__text + .sector-featured__text { margin-top: 16px; }
+    .sector-featured__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .sector-featured__list li {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      padding-left: 20px;
+      position: relative;
+    }
+    .sector-featured__list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-insight-gold);
+    }
+    .sector-featured__note {
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      margin-top: 24px;
+      line-height: 1.6;
+    }
+
+    /* CTA FINAL */
+    .cta-final { padding: 96px 80px; background: linear-gradient(135deg, #0C1B3A 0%, #1A3158 100%); text-align: center; position: relative; overflow: hidden; }
     .cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(212,160,23,0.06) 0%, transparent 60%); pointer-events: none; }
     .cta-final__inner { position: relative; z-index: 1; }
     .cta-final__title { font-family: var(--font-heading); font-size: 44px; font-weight: 400; color: var(--color-white); line-height: 1.15; letter-spacing: -0.01em; max-width: 600px; margin: 0 auto; }
-    .cta-final__text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 500px; margin: 20px auto 0; }
+    .cta-final__subtitle { font-size: 18px; color: rgba(255,255,255,0.8); margin-top: 16px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
     .cta-final__btn { margin-top: 40px; }
 
     /* FOOTER */
@@ -308,7 +327,7 @@
     .footer__values { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; }
     .footer__values strong { color: var(--color-white); font-weight: 600; }
     .footer__tagline { font-family: var(--font-heading); font-size: 15px; font-style: italic; color: rgba(255,255,255,0.5); margin-top: 8px; }
-    .footer__col-title { font-size: 14px; font-weight: 600; color: var(--color-white); margin-bottom: 20px; }
+    .footer__col-title { font-size: 14px; font-weight: 600; color: var(--color-white); margin-bottom: 20px; letter-spacing: 0.02em; }
     .footer__links { display: flex; flex-direction: column; gap: 10px; }
     .footer__link { font-size: 14px; color: rgba(255,255,255,0.7); transition: color var(--transition-fast); }
     .footer__link:hover { color: var(--color-white); }
@@ -322,22 +341,22 @@
     /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
     .reveal--visible { opacity: 1; transform: translateY(0); }
-    .related-services { padding: 80px 80px; background: var(--color-off-white); }
-    .related-services__inner { max-width: var(--max-width); margin: 0 auto; }
-    .related-services__title { font-family: var(--font-heading); font-size: 28px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; margin-bottom: 40px; }
-    .related-services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .related-services__card { background: var(--color-white); border-radius: 8px; padding: 32px; box-shadow: var(--shadow-1); transition: box-shadow var(--transition-medium), transform var(--transition-medium); text-decoration: none; display: block; }
-    .related-services__card:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
-    .related-services__card-title { font-family: var(--font-heading); font-size: 22px; font-weight: 400; color: var(--color-text-heading); margin-top: 8px; line-height: 1.3; }
-    .related-services__card-text { font-size: 15px; color: var(--color-text-primary); line-height: 1.6; margin-top: 12px; }
-    .related-services__card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-intelligence-blue); margin-top: 16px; }
+    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+    .reveal-stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+    .reveal-stagger > .reveal:nth-child(7) { transition-delay: 480ms; }
 
     /* RESPONSIVE - TABLET */
     @media (max-width: 1024px) {
       .header__inner { padding: 0 48px; }
-      .page-hero, .service-content, .deliverable-section, .related-services, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
+      .page-hero, .sectors, .sector-featured, .cta-final, .footer { padding-left: 48px; padding-right: 48px; }
+      .nav-desktop { gap: 24px; }
       .mega-menu__inner { padding: 32px 48px; gap: 24px; }
       .page-hero__title { font-size: 38px; }
+      .sectors__grid { grid-template-columns: repeat(2, 1fr); }
+      .sector-featured__inner { gap: 40px; }
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
 
@@ -348,18 +367,29 @@
       .nav-mobile { display: flex; }
       .btn { white-space: normal; max-width: 100%; }
       .btn--large { padding: 16px 24px; }
+
       .header__inner { padding: 0 20px; }
-      .page-hero, .service-content, .deliverable-section, .related-services, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
+      .page-hero, .sectors, .sector-featured, .cta-final, .footer { padding-left: 20px; padding-right: 20px; }
+
       .page-hero { padding-top: 120px; padding-bottom: 60px; }
       .page-hero__title { font-size: 32px; }
-      .page-hero__tagline { font-size: 19px; }
+      .page-hero__subtitle { font-size: 18px; }
       .section-title { font-size: 26px; }
-      .service-content, .deliverable-section, .related-services { padding-top: 64px; padding-bottom: 64px; }
-      .service-content__grid { grid-template-columns: 1fr; gap: 40px; }
-      .service-content__block-title { font-size: 22px; }
-      .deliverable-grid { grid-template-columns: 1fr 1fr; }
-      .related-services__grid { grid-template-columns: 1fr; }
+
+      .sectors, .sector-featured { padding-top: 64px; padding-bottom: 64px; }
+
+      .sectors__grid { grid-template-columns: 1fr; }
+
+      .sector-featured__inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .sector-featured__title { font-size: 28px; }
+      .sector-featured__list { grid-template-columns: 1fr; }
+
+      .cta-final { padding-top: 64px; padding-bottom: 64px; }
       .cta-final__title { font-size: 32px; }
+
       .footer__grid { grid-template-columns: 1fr; gap: 32px; }
       .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
       .footer { padding: 48px 20px 24px; }
@@ -370,17 +400,12 @@
       .logo__tagline { font-size: 8px; }
       .logo__symbol { height: 36px; }
       .page-hero__title { font-size: 28px; }
-      .deliverable-grid { grid-template-columns: 1fr; }
       .cta-final__title { font-size: 28px; }
+      .sector-card { padding: 28px 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
       .reveal { opacity: 1; transform: none; }
     }
   </style>
@@ -392,12 +417,12 @@
     <div class="header__inner">
       <a href="index.html" class="logo" aria-label="Mbhidiya Intelligence - Home">
         <img src="logo-white.png" alt="Mbhidiya Intelligence" class="logo__symbol">
-          <div class="logo__text"><span class="logo__name">Mbhidiya</span><span class="logo__tagline">Intelligence</span></div>
+        <div class="logo__text"><span class="logo__name">Mbhidiya</span><span class="logo__tagline">Intelligence</span></div>
       </a>
 
       <nav class="nav-desktop" aria-label="Main navigation">
         <div class="nav-desktop__dropdown">
-          <button class="nav-desktop__dropdown-trigger nav-desktop__dropdown-trigger--active" aria-expanded="false" aria-controls="mega-menu" id="services-trigger">
+          <button class="nav-desktop__dropdown-trigger" aria-expanded="false" aria-controls="mega-menu" id="services-trigger">
             What We Do
             <svg class="nav-desktop__chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
@@ -406,7 +431,7 @@
         <a href="team.html" class="nav-desktop__link">Our Team</a>
         <a href="why-mbhidiya.html" class="nav-desktop__link">Why Mbhidiya</a>
         <a href="canada-africa.html" class="nav-desktop__link">Canada &amp; Africa</a>
-        <a href="sectors.html" class="nav-desktop__link">Sectors</a>
+        <a href="sectors.html" class="nav-desktop__link nav-desktop__link--active">Sectors</a>
         <a href="insights.html" class="nav-desktop__link">Insights</a>
         <a href="contact.html" class="btn btn--gold">Request a Consultation</a>
       </nav>
@@ -452,7 +477,10 @@
             </a>
             <div class="mega-menu__cta-title">Need guidance?</div>
             <p class="mega-menu__cta-text">Not sure which intelligence service fits your situation?</p>
-            <a href="contact.html" class="mega-menu__cta-link">Request a Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="contact.html" class="mega-menu__cta-link">
+              Request a Consultation
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -461,7 +489,7 @@
 
   <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <div class="nav-mobile__accordion">
-      <button class="nav-mobile__accordion-trigger nav-mobile__accordion-trigger--active" aria-expanded="false" aria-controls="mobile-services">
+      <button class="nav-mobile__accordion-trigger" aria-expanded="false" aria-controls="mobile-services">
         What We Do
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8L10 13L15 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -483,9 +511,11 @@
     <a href="team.html" class="nav-mobile__link">Our Team</a>
     <a href="why-mbhidiya.html" class="nav-mobile__link">Why Mbhidiya</a>
     <a href="canada-africa.html" class="nav-mobile__link">Canada &amp; Africa</a>
-    <a href="sectors.html" class="nav-mobile__link">Sectors</a>
+    <a href="sectors.html" class="nav-mobile__link nav-mobile__link--active">Sectors</a>
     <a href="insights.html" class="nav-mobile__link">Insights</a>
-    <div class="nav-mobile__cta"><a href="contact.html" class="btn btn--gold">Request a Consultation</a></div>
+    <div class="nav-mobile__cta">
+      <a href="contact.html" class="btn btn--gold">Request a Consultation</a>
+    </div>
   </nav>
 
   <main>
@@ -495,105 +525,128 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span class="breadcrumb__sep">/</span>
-          <a href="services.html">What We Do</a>
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current">Third-Party &amp; Supplier Integrity</span>
+          <span class="breadcrumb__current">Sectors</span>
         </nav>
-        <span class="overline">Service 09</span>
-        <h1 class="page-hero__title">Third-Party &amp; Supplier Integrity Intelligence</h1>
-        <p class="page-hero__tagline">Your Risk Can Come Through Someone Else.</p>
+        <span class="overline">Sectors We Serve</span>
+        <h1 class="page-hero__title">Who We Work&nbsp;With</h1>
+        <p class="page-hero__subtitle">Intelligence services tailored to the specific decision-making needs of organisations across industries and operating environments.</p>
       </div>
     </section>
 
-    <section class="service-content">
-      <div class="service-content__inner">
-        <div class="service-content__intro reveal">
-          <p>Organisations increasingly depend on suppliers, consultants, agents, distributors and external partners.</p>
-          <p>We help clients understand who those third parties are before they become part of the organisation's commercial ecosystem.</p>
+    <section class="sectors">
+      <div class="sectors__inner">
+        <div class="sectors__header reveal">
+          <span class="overline">Our Sectors</span>
+          <h2 class="section-title">Industry-Specific Intelligence</h2>
         </div>
 
-        <div class="service-content__grid">
-          <div class="service-content__block reveal">
-            <h2 class="service-content__block-title">We Support Assessments Involving</h2>
-            <div class="service-content__tags">
-              <span class="service-content__tag">Suppliers</span>
-              <span class="service-content__tag">Vendors</span>
-              <span class="service-content__tag">Agents</span>
-              <span class="service-content__tag">Consultants</span>
-              <span class="service-content__tag">Distributors</span>
-              <span class="service-content__tag">Contractors</span>
-              <span class="service-content__tag">Intermediaries</span>
-              <span class="service-content__tag">Joint-venture partners</span>
+        <div class="sectors__grid reveal-stagger">
+
+          <!-- Private Equity & Investment Firms -->
+          <div class="sector-card reveal">
+            <div class="sector-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
             </div>
+            <h3 class="sector-card__title">Private Equity &amp; Investment Firms</h3>
+            <p class="sector-card__text">Support investment decisions with intelligence on:</p>
+            <ul class="sector-card__list">
+              <li>Founders</li>
+              <li>Management teams</li>
+              <li>Beneficial owners</li>
+              <li>Corporate networks</li>
+              <li>Local partners</li>
+              <li>Reputation</li>
+              <li>Hidden relationships</li>
+            </ul>
           </div>
 
-          <div class="service-content__block reveal">
-            <h2 class="service-content__block-title">Identifying Relevant Concerns</h2>
-            <div class="service-content__tags">
-              <span class="service-content__tag">Ownership</span>
-              <span class="service-content__tag">Reputation</span>
-              <span class="service-content__tag">Integrity</span>
-              <span class="service-content__tag">Corporate relationships</span>
-              <span class="service-content__tag">Conflicts of interest</span>
-              <span class="service-content__tag">Political exposure</span>
-              <span class="service-content__tag">Adverse information</span>
-              <span class="service-content__tag">Other relevant risk indicators</span>
+          <!-- Corporate Development & M&A Teams -->
+          <div class="sector-card reveal">
+            <div class="sector-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
             </div>
+            <h3 class="sector-card__title">Corporate Development &amp; M&amp;A Teams</h3>
+            <p class="sector-card__text">Add an intelligence layer to acquisitions, investments and strategic transactions.</p>
           </div>
-        </div>
 
-        <div class="service-back">
-          <a href="services.html" class="btn btn--outline">Explore What We Do</a>
+          <!-- Law Firms -->
+          <div class="sector-card reveal">
+            <div class="sector-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="sector-card__title">Law Firms</h3>
+            <p class="sector-card__text">Support clients with specialised intelligence alongside legal due diligence, litigation, investigations and transaction work.</p>
+          </div>
+
+          <!-- Financial Institutions & Fintech -->
+          <div class="sector-card reveal">
+            <div class="sector-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3 class="sector-card__title">Financial Institutions &amp; Fintech</h3>
+            <p class="sector-card__text">Support enhanced intelligence inquiries involving:</p>
+            <ul class="sector-card__list">
+              <li>High-risk individuals</li>
+              <li>Complex companies</li>
+              <li>Corporate relationships</li>
+              <li>Reputation</li>
+              <li>Counterparties</li>
+            </ul>
+          </div>
+
+          <!-- Infrastructure, Energy & Logistics -->
+          <div class="sector-card reveal">
+            <div class="sector-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>
+            </div>
+            <h3 class="sector-card__title">Infrastructure, Energy &amp; Logistics</h3>
+            <p class="sector-card__text">Support major projects and cross-border operations by helping organisations understand the companies, people and stakeholders involved.</p>
+          </div>
+
+          <!-- Technology & Digital Businesses -->
+          <div class="sector-card reveal">
+            <div class="sector-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="sector-card__title">Technology &amp; Digital Businesses</h3>
+            <p class="sector-card__text">Support cross-border expansion, partnerships, executive appointments and third-party relationships.</p>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="deliverable-section">
-      <div class="deliverable-section__inner reveal">
-        <h2 class="deliverable-section__title">Deliverable</h2>
-        <p class="deliverable-section__text">Our intelligence can help identify relevant concerns involving:</p>
-        <div class="deliverable-grid">
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Ownership and corporate relationships</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Reputation and integrity</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Conflicts of interest</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Political exposure</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Adverse information</div>
-          <div class="deliverable-item"><span class="deliverable-item__dot"></span>Other relevant risk indicators</div>
+    <!-- Mining & Natural Resources - Featured full-width -->
+    <section class="sector-featured">
+      <div class="sector-featured__inner reveal">
+        <div>
+          <span class="overline">Featured Sector</span>
+          <h2 class="sector-featured__title">Mining &amp; Natural Resources</h2>
+          <p class="sector-featured__text">Support decisions involving key relationships across the mining and natural resources value chain.</p>
+          <p class="sector-featured__text">This is particularly relevant to Canada-Africa commercial relationships, where mining and critical minerals remain important areas of economic engagement.</p>
+          <p class="sector-featured__note">Source: Global Affairs Canada</p>
         </div>
-      </div>
-    </section>
-
-    <section class="related-services">
-      <div class="related-services__inner">
-        <span class="overline">Explore Further</span>
-        <h2 class="related-services__title">Related Services</h2>
-        <div class="related-services__grid">
-          <a href="service-corporate-counterparty-intelligence.html" class="related-services__card">
-            <span class="overline">Corporate Intelligence</span>
-            <h3 class="related-services__card-title">Corporate &amp; Counterparty Intelligence</h3>
-            <p class="related-services__card-text">Investigate the integrity, ownership and conduct of corporate counterparties before entering a business relationship.</p>
-            <span class="related-services__card-link">Learn More &rarr;</span>
-          </a>
-          <a href="service-fraud-integrity-intelligence.html" class="related-services__card">
-            <span class="overline">Strategic Intelligence</span>
-            <h3 class="related-services__card-title">Fraud &amp; Integrity Intelligence</h3>
-            <p class="related-services__card-text">Investigate suspected fraud, corruption and integrity failures across business operations and partnerships.</p>
-            <span class="related-services__card-link">Learn More &rarr;</span>
-          </a>
-          <a href="service-continuous-monitoring.html" class="related-services__card">
-            <span class="overline">Strategic Intelligence</span>
-            <h3 class="related-services__card-title">Continuous Intelligence Monitoring</h3>
-            <p class="related-services__card-text">Ongoing surveillance and early warning intelligence on counterparties, partners and market conditions.</p>
-            <span class="related-services__card-link">Learn More &rarr;</span>
-          </a>
+        <div>
+          <ul class="sector-featured__list">
+            <li>Local partners</li>
+            <li>Contractors</li>
+            <li>Suppliers</li>
+            <li>Executives</li>
+            <li>Investors</li>
+            <li>Stakeholders</li>
+            <li>Market-entry relationships</li>
+          </ul>
+          <div style="margin-top: 32px;">
+            <a href="contact.html" class="btn btn--outline-white">Discuss Your Requirements</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="cta-final">
       <div class="cta-final__inner reveal">
-        <h2 class="cta-final__title">Discuss Your Intelligence Requirements</h2>
-        <p class="cta-final__text">Every intelligence requirement is different. Let us help you define the questions that need to be answered.</p>
+        <h2 class="cta-final__title">Intelligence Tailored to Your&nbsp;Sector</h2>
+        <p class="cta-final__subtitle">Tell us what decision you are facing. We will define the intelligence questions that need to be answered.</p>
         <div class="cta-final__btn">
           <a href="contact.html" class="btn btn--gold btn--large">Request a Confidential Consultation</a>
         </div>
@@ -608,7 +661,7 @@
         <div class="footer__brand">
           <div class="footer__logo">
             <img src="logo-white.png" alt="Mbhidiya Intelligence" class="footer__logo-symbol">
-              <span class="footer__logo-name">Mbhidiya</span>
+            <span class="footer__logo-name">Mbhidiya</span>
           </div>
           <p class="footer__values"><strong>Discretion.</strong> <strong>Loyalty.</strong> <strong>Precision.</strong></p>
           <p class="footer__tagline">Where Intelligence Meets Action.</p>
@@ -633,7 +686,7 @@
           <div class="footer__col-title">Company</div>
           <div class="footer__links">
             <a href="about.html" class="footer__link">About Us</a>
-            <a href="/process" class="footer__link">Our Process</a>
+            <a href="team.html" class="footer__link">Our Team</a>
             <a href="sectors.html" class="footer__link">Sectors</a>
             <a href="why-mbhidiya.html" class="footer__link">Why Mbhidiya</a>
             <a href="process.html" class="footer__link">Our Process</a>
@@ -682,6 +735,7 @@
         closeMobileNav();
       }
     });
+
     var navToggle = document.getElementById('nav-toggle');
     var navMobile = document.getElementById('nav-mobile');
     function openMobileNav() {
@@ -702,6 +756,7 @@
       if (this.getAttribute('aria-expanded') === 'true') closeMobileNav();
       else openMobileNav();
     });
+
     megaMenu.querySelectorAll('.mega-menu__link, .mega-menu__cta-link').forEach(function (link) {
       link.addEventListener('click', function () {
         servicesTrigger.setAttribute('aria-expanded', 'false');
@@ -711,6 +766,7 @@
     navMobile.querySelectorAll('.nav-mobile__sublink, .nav-mobile__link').forEach(function (link) {
       link.addEventListener('click', function () { closeMobileNav(); });
     });
+
     var accordionTrigger = document.querySelector('.nav-mobile__accordion-trigger');
     var accordionPanel = document.getElementById('mobile-services');
     accordionTrigger.addEventListener('click', function () {
@@ -718,6 +774,7 @@
       this.setAttribute('aria-expanded', String(!expanded));
       accordionPanel.classList.toggle('nav-mobile__accordion-panel--open');
     });
+
     var revealElements = document.querySelectorAll('.reveal');
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
