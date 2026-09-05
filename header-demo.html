@@ -41,6 +41,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: var(--font-body);
       color: var(--color-dark-gray);
@@ -55,7 +59,7 @@
       left: 0;
       right: 0;
       height: var(--header-height);
-      z-index: 1000;
+      z-index: 2100;
       transition: background var(--transition-medium), box-shadow var(--transition-medium);
     }
 
@@ -395,6 +399,15 @@
       transform: translateY(-8px) rotate(-45deg);
     }
 
+    .nav-toggle--open {
+      background: rgba(212, 160, 23, 0.15);
+      border-radius: 50%;
+    }
+
+    .nav-toggle--open .nav-toggle__bar {
+      background: var(--color-insight-gold);
+    }
+
     /* ===== Mobile Nav Overlay ===== */
     .nav-mobile {
       display: none;
@@ -657,6 +670,15 @@
 
       .nav-mobile {
         display: flex;
+      }
+
+      .btn {
+        white-space: normal;
+        max-width: 100%;
+      }
+
+      .btn--large {
+        padding: 16px 24px;
       }
 
       .header__inner {

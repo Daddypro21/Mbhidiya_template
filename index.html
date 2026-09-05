@@ -95,6 +95,7 @@
 
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
@@ -290,7 +291,7 @@
         left: 0;
         right: 0;
         height: var(--header-height);
-        z-index: 1000;
+        z-index: 2100;
         transition:
           background var(--transition-medium),
           box-shadow var(--transition-medium);
@@ -596,6 +597,15 @@
 
       .nav-toggle--open .nav-toggle__bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .nav-toggle--open {
+        background: rgba(212, 160, 23, 0.15);
+        border-radius: 50%;
+      }
+
+      .nav-toggle--open .nav-toggle__bar {
+        background: var(--color-insight-gold);
       }
 
       /* Mobile Nav Overlay */
@@ -1538,6 +1548,15 @@
 
         .nav-mobile {
           display: flex;
+        }
+
+        .btn {
+          white-space: normal;
+          max-width: 100%;
+        }
+
+        .btn--large {
+          padding: 16px 24px;
         }
 
         .container,
